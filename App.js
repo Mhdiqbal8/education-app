@@ -1,41 +1,44 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './screen/HomeScreen';
+import MateriNanoTeknologi from './screen/MateriNanoTeknologi';
+import CapaiDanTujuanPembelajaran from './screen/CapaiDanTujuanPembelajaran';
+import MindMapQuiz from './screen/MindMapQuiz';
+import Profile from './screen/Profile';
+import Video from './screen/Video';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => {
-          console.log("You tapped the button!");
-        }}
-      >
-        <Text style={styles.text}>HELLO WORLDS</Text>
-      </TouchableOpacity>
-      <View style={styles.flex}>
-        <Text>1</Text>
-        <Text>2</Text>
-        <Text>3</Text>
-        <Text>4</Text>
-      </View>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          name="MateriNanoTeknologi"
+          component={MateriNanoTeknologi}
+        />
+        <Stack.Screen
+          name="MindMapQuiz"
+          component={MindMapQuiz}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+        />
+        <Stack.Screen
+          name="Video"
+          component={Video}
+        />
+        <Stack.Screen
+          name="CapaiDanTujuanPembelajaran"
+          component={CapaiDanTujuanPembelajaran}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  flex: {
-    display: "flex",
-    gap: 10,
-    flexDirection: "row",
-  },
-  text: {
-    color: "blue",
-    fontSize: 40,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
