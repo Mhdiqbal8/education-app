@@ -2,12 +2,16 @@ import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function MindMapQuiz() {
+export default function Quiz5() {
   const navigation = useNavigation();
   return (
     <View style={styles.Container}>
-      <Text style={styles.Text}>Mind Map Quiz 1</Text>
-      <Button title="Mulai Kuis 1" onPress={() => navigation.navigate("Page1")}>
+      <Text style={styles.Text}>Soal 5</Text>
+      <Text style={styles.Text}>
+        Pilhan 5 jawaban beserta select, jika benar maka akan mengarah ke
+        halaman pembahasan
+      </Text>
+      <Button title="seclect" onPress={() => navigation.navigate("Page10")}>
         /
       </Button>
     </View>
