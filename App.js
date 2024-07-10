@@ -9,16 +9,7 @@ import Profile from "./screen/Profile";
 import Video from "./screen/Video";
 
 // quiz 1
-import Page1 from "./screen/Page1";
-import Page2 from "./screen/Page2";
-import Page3 from "./screen/Page3";
-import Page4 from "./screen/Page4";
-import Page5 from "./screen/Page5";
-import Page6 from "./screen/Page6";
-import Page7 from "./screen/Page7";
-import Page8 from "./screen/Page8";
-import Page9 from "./screen/Page9";
-import Page10 from "./screen/Page10";
+import { kuis_1 } from "./screen/mind_map_quiz/kuis_1"
 
 // quiz 1
 import Page2_1 from "./screen/Page2_1";
@@ -80,17 +71,15 @@ export default function App() {
           component={CapaiDanTujuanPembelajaran}
         />
 
-        {/* Quiz Mind Map 1 */}
-        <Stack.Screen name="Page1" component={Page1} />
-        <Stack.Screen name="Page2" component={Page2} />
-        <Stack.Screen name="Page3" component={Page3} />
-        <Stack.Screen name="Page4" component={Page4} />
-        <Stack.Screen name="Page5" component={Page5} />
-        <Stack.Screen name="Page6" component={Page6} />
-        <Stack.Screen name="Page7" component={Page7} />
-        <Stack.Screen name="Page8" component={Page8} />
-        <Stack.Screen name="Page9" component={Page9} />
-        <Stack.Screen name="Page10" component={Page10} />
+        {/* Quiz Mind Map Soal 1 */}
+        <Stack.Screen name="kuis_1_soal_1" component={kuis_1.Soal_1} />
+        <Stack.Screen name="kuis_1_soal_2" component={kuis_1.Soal_2} />
+        <Stack.Screen name="pembahasan_1_2" component={kuis_1.Pembahasan_1_2} />
+        <Stack.Screen name="kuis_1_soal_3" component={kuis_1.Soal_3} />
+        <Stack.Screen name="pembahasan_1_3" component={kuis_1.Pembahasan_1_3} />
+        <Stack.Screen name="kuis_1_soal_4" component={kuis_1.Soal_4} />
+        <Stack.Screen name="pembahasan_1_4" component={kuis_1.Pembahasan_1_4} />
+        <Stack.Screen name="kuis_1_soal_5" component={kuis_1.Soal_5} />
 
         {/* Quiz Mind Map 2 */}
         <Stack.Screen name="Page2_1" component={Page2_1} />
