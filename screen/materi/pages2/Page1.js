@@ -2,14 +2,14 @@ import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function MindMapQuiz() {
+export default function Quiz1() {
   const navigation = useNavigation();
   return (
     <View style={styles.Container}>
-      <Text style={styles.Text}>Mind Map Quiz 1</Text>
+      <Text style={styles.Text}>Gambar Konfigurasi Elektron</Text>
       <Button
-        title="Mulai Kuis 1"
-        onPress={() => navigation.navigate("materi/select_one/Page1")}
+        title="click image"
+        onPress={() => navigation.navigate("Materi/Pages2/Page2")}
       >
         /
       </Button>

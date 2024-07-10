@@ -61,6 +61,26 @@ import Page4_11 from "./screen/Page4_11";
 import Page4_12 from "./screen/Page4_12";
 import Page4_13 from "./screen/Page4_13";
 
+// Materinanoteknologi
+
+// select 1
+import Materi1 from "./screen/materi/pages1/Page1";
+// select 2
+import MateriKonfigurasiElektron from "./screen/materi/pages2/Page1";
+import MateriKonfigurasiElektron1 from "./screen/materi/pages2/Page2";
+import MateriKonfigurasiElektron2 from "./screen/materi/pages2/Page3";
+
+// select 3
+import MateriTabelPeriodik from "./screen/materi/pages3/Page1";
+import MateriTabelPeriodik2 from "./screen/materi/pages3/Page2";
+import MateriTabelPeriodik3 from "./screen/materi/pages3/Page3";
+import MateriTabelPeriodik4 from "./screen/materi/pages3/Page4";
+import MateriTabelPeriodik5 from "./screen/materi/pages3/Page5";
+import MateriTabelPeriodik6 from "./screen/materi/pages3/Page6";
+
+// select 4
+import MateriNanoMaterial1 from "./screen/materi/pages4/Page1";
+import MateriNanoMaterial2 from "./screen/materi/pages4/Page2";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -132,6 +152,71 @@ export default function App() {
         <Stack.Screen name="Page4_11" component={Page4_11} />
         <Stack.Screen name="Page4_12" component={Page4_12} />
         <Stack.Screen name="Page4_13" component={Page4_13} />
+
+        {/* Materi nanoteknologi */}
+        <Stack.Screen name="Materi/Pages1/Page1" component={Materi1} />
+        {/* Select 2  */}
+        <Stack.Screen
+          name="Materi/Pages2/Page1"
+          component={MateriKonfigurasiElektron}
+        />
+        <Stack.Screen
+          name="Materi/Pages2/Page2"
+          component={MateriKonfigurasiElektron1}
+        />
+        <Stack.Screen
+          name="Materi/Pages2/Page3"
+          component={MateriKonfigurasiElektron2}
+        />
+
+        {/* Select 3 */}
+        <Stack.Screen
+          name="Materi/Pages3/Page1"
+          component={MateriTabelPeriodik}
+        />
+
+        {/* click select 1  */}
+        <Stack.Screen
+          name="Materi/Pages3/Page2"
+          component={MateriTabelPeriodik2}
+        />
+
+        <Stack.Screen
+          name="Materi/Pages3/Page3"
+          component={MateriTabelPeriodik3}
+        />
+
+        {/* Bagian Select 1 */}
+        <Stack.Screen
+          name="Materi/Pages3/Page4"
+          component={MateriTabelPeriodik4}
+        />
+        <Stack.Screen
+          name="Materi/Pages3/Page5"
+          component={MateriTabelPeriodik5}
+        />
+        <Stack.Screen
+          name="Materi/Pages3/Page6"
+          component={MateriTabelPeriodik6}
+        />
+
+        {/* click select 2 */}
+
+        {/* Masih sama kayak select 1 */}
+        {/* <Stack.Screen
+          name="Materi/Pages3/Page6"
+          component={MateriTabelPeriodik6}
+        /> */}
+
+        {/* Select 4 */}
+        <Stack.Screen
+          name="Materi/Pages4/Page1"
+          component={MateriNanoMaterial}
+        />
+        <Stack.Screen
+          name="Materi/Pages4/Page2"
+          component={MateriNanoMaterial2}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
