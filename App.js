@@ -1,56 +1,23 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import Video from "./screen/Video";
+import Profile from "./screen/Profile";
 import HomeScreen from "./screen/HomeScreen";
 import MateriNanoTeknologi from "./screen/MateriNanoTeknologi";
 import CapaiDanTujuanPembelajaran from "./screen/CapaiDanTujuanPembelajaran";
+
 import MindMapQuiz from "./screen/MindMapQuiz";
-import Profile from "./screen/Profile";
-import Video from "./screen/Video";
+import MindMapQuiz_2 from "./screen/MindMapQuiz_2";
+import MindMapQuiz_3 from "./screen/MindMapQuiz_3";
+import MindMapQuiz_4 from "./screen/MindMapQuiz_4";
 
-// quiz 1
 import { kuis_1 } from "./screen/mind_map_quiz/kuis_1"
+import { kuis_2 } from "./screen/mind_map_quiz/kuis_2"
+import { kuis_3 } from "./screen/mind_map_quiz/kuis_3"
+import { kuis_4 } from "./screen/mind_map_quiz/kuis_4"
 
-// quiz 1
-import Page2_1 from "./screen/Page2_1";
-import Page2_2 from "./screen/Page2_2";
-import Page2_3 from "./screen/Page2_3";
-import Page2_4 from "./screen/Page2_4";
-import Page2_5 from "./screen/Page2_5";
-import Page2_6 from "./screen/Page2_6";
-import Page2_7 from "./screen/Page2_7";
-import Page2_8 from "./screen/Page2_8";
-import Page2_9 from "./screen/Page2_9";
-import Page2_10 from "./screen/Page2_10";
-import Page2_11 from "./screen/Page2_11";
-import Page2_12 from "./screen/Page2_12";
-import Page2_13 from "./screen/Page2_13";
-
-// quiz 3
-import Page3_1 from "./screen/Page3_1";
-import Page3_2 from "./screen/Page3_2";
-import Page3_3 from "./screen/Page3_3";
-import Page3_4 from "./screen/Page3_4";
-import Page3_5 from "./screen/Page3_5";
-import Page3_6 from "./screen/Page3_6";
-import Page3_7 from "./screen/Page3_7";
-import Page3_8 from "./screen/Page3_8";
-import Page3_9 from "./screen/Page3_9";
-
-// quiz 4
-import Page4_1 from "./screen/Page4_1";
-import Page4_2 from "./screen/Page4_2";
-import Page4_3 from "./screen/Page4_3";
-import Page4_4 from "./screen/Page4_4";
-import Page4_5 from "./screen/Page4_5";
-import Page4_6 from "./screen/Page4_6";
-import Page4_7 from "./screen/Page4_7";
-import Page4_8 from "./screen/Page4_8";
-import Page4_9 from "./screen/Page4_9";
-import Page4_10 from "./screen/Page4_10";
-import Page4_11 from "./screen/Page4_11";
-import Page4_12 from "./screen/Page4_12";
-import Page4_13 from "./screen/Page4_13";
 
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +31,9 @@ export default function App() {
           component={MateriNanoTeknologi}
         />
         <Stack.Screen name="MindMapQuiz" component={MindMapQuiz} />
+        <Stack.Screen name="MindMapQuiz_2" component={MindMapQuiz_2} />
+        <Stack.Screen name="MindMapQuiz_3" component={MindMapQuiz_3} />
+        <Stack.Screen name="MindMapQuiz_4" component={MindMapQuiz_4} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Video" component={Video} />
         <Stack.Screen
@@ -82,45 +52,41 @@ export default function App() {
         <Stack.Screen name="kuis_1_soal_5" component={kuis_1.Soal_5} />
 
         {/* Quiz Mind Map 2 */}
-        <Stack.Screen name="Page2_1" component={Page2_1} />
-        <Stack.Screen name="Page2_2" component={Page2_2} />
-        <Stack.Screen name="Page2_3" component={Page2_3} />
-        <Stack.Screen name="Page2_4" component={Page2_4} />
-        <Stack.Screen name="Page2_5" component={Page2_5} />
-        <Stack.Screen name="Page2_6" component={Page2_6} />
-        <Stack.Screen name="Page2_7" component={Page2_7} />
-        <Stack.Screen name="Page2_8" component={Page2_8} />
-        <Stack.Screen name="Page2_9" component={Page2_9} />
-        <Stack.Screen name="Page2_10" component={Page2_10} />
-        <Stack.Screen name="Page2_11" component={Page2_11} />
-        <Stack.Screen name="Page2_12" component={Page2_12} />
-        <Stack.Screen name="Page2_13" component={Page2_13} />
+        <Stack.Screen name="kuis_2_soal_1" component={kuis_2.Soal_1} />
+        <Stack.Screen name="kuis_2_soal_2" component={kuis_2.Soal_2} />
+        <Stack.Screen name="kuis_2_soal_3" component={kuis_2.Soal_3} />
+        <Stack.Screen name="kuis_2_soal_4" component={kuis_2.Soal_4} />
+        <Stack.Screen name="kuis_2_soal_5" component={kuis_2.Soal_5} />
+        <Stack.Screen name="kuis_2_soal_6" component={kuis_2.Soal_6} />
+        <Stack.Screen name="pembahasan_2_1" component={kuis_2.Pembahasan_2_1} />
+        <Stack.Screen name="pembahasan_2_2" component={kuis_2.Pembahasan_2_2} />
+        <Stack.Screen name="pembahasan_2_3" component={kuis_2.Pembahasan_2_3} />
+        <Stack.Screen name="pembahasan_2_4" component={kuis_2.Pembahasan_2_4} />
+        <Stack.Screen name="pembahasan_2_5" component={kuis_2.Pembahasan_2_5} />
+        <Stack.Screen name="pembahasan_2_6" component={kuis_2.Pembahasan_2_6} />
 
         {/* Quix Mind Map 3 */}
-        <Stack.Screen name="Page3_1" component={Page3_1} />
-        <Stack.Screen name="Page3_2" component={Page3_2} />
-        <Stack.Screen name="Page3_3" component={Page3_3} />
-        <Stack.Screen name="Page3_4" component={Page3_4} />
-        <Stack.Screen name="Page3_5" component={Page3_5} />
-        <Stack.Screen name="Page3_6" component={Page3_6} />
-        <Stack.Screen name="Page3_7" component={Page3_7} />
-        <Stack.Screen name="Page3_8" component={Page3_8} />
-        <Stack.Screen name="Page3_9" component={Page3_9} />
+        <Stack.Screen name="kuis_3_soal_1" component={kuis_3.Soal_1} />
+        <Stack.Screen name="kuis_3_soal_2" component={kuis_3.Soal_2} />
+        <Stack.Screen name="kuis_3_soal_3" component={kuis_3.Soal_3} />
+        <Stack.Screen name="kuis_3_soal_4" component={kuis_3.Soal_4} />
+        <Stack.Screen name="pembahasan_3_1" component={kuis_3.Pembahasan_3_1} />
+        <Stack.Screen name="pembahasan_3_2" component={kuis_3.Pembahasan_3_2} />
+        <Stack.Screen name="pembahasan_3_3" component={kuis_3.Pembahasan_3_3} />
+        <Stack.Screen name="pembahasan_3_4" component={kuis_3.Pembahasan_3_4} />
 
         {/* Quiz Mind Map 4 */}
-        <Stack.Screen name="Page4_1" component={Page4_1} />
-        <Stack.Screen name="Page4_2" component={Page4_2} />
-        <Stack.Screen name="Page4_3" component={Page4_3} />
-        <Stack.Screen name="Page4_4" component={Page4_4} />
-        <Stack.Screen name="Page4_5" component={Page4_5} />
-        <Stack.Screen name="Page4_6" component={Page4_6} />
-        <Stack.Screen name="Page4_7" component={Page4_7} />
-        <Stack.Screen name="Page4_8" component={Page4_8} />
-        <Stack.Screen name="Page4_9" component={Page4_9} />
-        <Stack.Screen name="Page4_10" component={Page4_10} />
-        <Stack.Screen name="Page4_11" component={Page4_11} />
-        <Stack.Screen name="Page4_12" component={Page4_12} />
-        <Stack.Screen name="Page4_13" component={Page4_13} />
+        <Stack.Screen name="kuis_4_soal_1" component={kuis_4.Soal_1} />
+        <Stack.Screen name="kuis_4_soal_2" component={kuis_4.Soal_2} />
+        <Stack.Screen name="kuis_4_soal_3" component={kuis_4.Soal_3} />
+        <Stack.Screen name="kuis_4_soal_4" component={kuis_4.Soal_4} />
+        <Stack.Screen name="kuis_4_soal_5" component={kuis_4.Soal_5} />
+        <Stack.Screen name="pembahasan_4_1" component={kuis_4.Pembahasan_4_1} />
+        <Stack.Screen name="pembahasan_4_2" component={kuis_4.Pembahasan_4_2} />
+        <Stack.Screen name="pembahasan_4_3" component={kuis_4.Pembahasan_4_3} />
+        <Stack.Screen name="pembahasan_4_4" component={kuis_4.Pembahasan_4_4} />
+        <Stack.Screen name="pembahasan_4_5" component={kuis_4.Pembahasan_4_5} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

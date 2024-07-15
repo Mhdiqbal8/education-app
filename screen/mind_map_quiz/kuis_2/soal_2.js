@@ -3,29 +3,29 @@ import { useState } from "react";
 import { View, Text, StyleSheet, Pressable, Modal, Alert } from "react-native";
 
 const data = [
-  { id: '1', desc: 'Pendekatan yang menggunakan proses fisik untuk membentuk struktur nano dari material bulk.' },
-  { id: '2', desc: 'Pendekatan yang memanfaatkan teknik mekanik untuk memahat material menjadi struktur nano.' },
-  { id: '3', desc: 'Pendekatan yang menggunakan tekanan tinggi dan suhu ekstrem untuk menciptakan struktur nano dari bahan baku yang lebih besar.' },
-  { id: '4', desc: 'Proses mengumpulkan atom dan molekul menggunakan reaksi kimia, dari atom ke klaster atom menjadi nanopartikel.' },
-  { id: '5', desc: 'Proses memecah dari benda padatan ke pecahan besar dalam bentuk serbuk mikro menjadi nanopartikel.' },
+  { id: '1',  name: 'Elektron dan Proton' },
+  { id: '2',  name: 'Proton dan Neutron' },
+  { id: '3',  name: 'Elektron' },
+  { id: '4',  name: 'Neutron dan Elektron' },
+  { id: '5',  name: 'Proton dan Positron' },
 ];
 
 
-export default function Soal_4() {
+export default function Soal_2() {
   const navigation = useNavigation();
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   const handleCardPress = (item) => {
     setSelectedAnswer(item);
-    if (item.id === '4' && item.desc === 'Proses mengumpulkan atom dan molekul menggunakan reaksi kimia, dari atom ke klaster atom menjadi nanopartikel.') {
+    if (item.id === '1' && item.name === 'Elektron') {
       Alert.alert(
         'Selamat',
-        'Jawaban Kamu benar yaitu Proses mengumpulkan atom dan molekul menggunakan reaksi kimia, dari atom ke klaster atom menjadi nanopartikel.',
+        'Jawaban Kamu benar yaitu Elektron.',
         [
           {
             text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('kuis_1_soal_5');
+              navigation.navigate('kuis_2_soal_3');
             },
           },
         ],
@@ -34,12 +34,12 @@ export default function Soal_4() {
     } else {
       Alert.alert(
         'Maaf, jawaban kamu salah.',
-        'Jawaban yang benar adalah Proses mengumpulkan atom dan molekul menggunakan reaksi kimia, dari atom ke klaster atom menjadi nanopartikel.',
+        'Jawaban yang benar adalah Elektron.',
         [
           {
-            text: 'Pembahasan',
+            text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('pembahasan_1_4');
+              navigation.navigate('pembahasan_2_2');
             },
           },
         ],
@@ -50,7 +50,7 @@ export default function Soal_4() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Apa yang dimaksud button-up?</Text>
+      <Text style={styles.text}>Dalam struktur atom, terdapat inti nukleus. Di luar ini nukleus terdapat?</Text>
       <View style={styles.gridContainer}>
         {data.map((item) => (
           <Pressable
@@ -58,7 +58,7 @@ export default function Soal_4() {
             style={styles.cardContainer}
             onPress={() => handleCardPress(item)}
           >
-            <Text style={styles.cardText}>{item.desc}</Text>
+            <Text style={styles.cardText}>{item.name}</Text>
           </Pressable>
         ))}
       </View>
@@ -68,14 +68,13 @@ export default function Soal_4() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: 35,
+    marginTop: 25,
     paddingHorizontal: 20,
   },
   text: {
-    fontSize: 24,
+    fontSize: 30,
     textAlign: "center",
-    marginBottom: 20
+    marginBottom: 10
   },
   gridContainer: {
     flexDirection: 'row',
@@ -86,11 +85,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#2196F3',
     borderRadius: 20,
     padding: 10,
-    width: '30%',
+    width: '48%',
     marginBottom: 10,
   },
   cardText: {
-    fontSize: 16,
+    fontSize: 18,
     textAlign: 'center',
     color: 'white',
   },

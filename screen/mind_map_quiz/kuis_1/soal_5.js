@@ -25,7 +25,7 @@ export default function Soal_5() {
           {
             text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('Page2_1');
+              navigation.navigate('MindMapQuiz_2');
             },
           },
         ],
@@ -39,7 +39,7 @@ export default function Soal_5() {
           {
             text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('Page2_1');
+              navigation.navigate('MindMapQuiz_2');
             },
           },
         ],
