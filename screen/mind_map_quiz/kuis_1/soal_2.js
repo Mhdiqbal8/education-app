@@ -24,7 +24,7 @@ export default function Soal_2() {
           {
             text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('pembahasan_1_2');
+              navigation.navigate('kuis_1_soal_3');
             },
           },
         ],
@@ -36,7 +36,7 @@ export default function Soal_2() {
         'Jawaban yang benar adalah Norio Taniguchi.',
         [
           {
-            text: 'Lanjut',
+            text: 'Pembahasan',
             onPress: () => {
               navigation.navigate('pembahasan_1_2');
             },
