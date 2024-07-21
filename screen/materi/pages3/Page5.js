@@ -1,0 +1,74 @@
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  ImageBackground,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import image from "../../../assets/tabelPeriodik/periodik5.jpg";
+// Gambar tabel periodik Unsur secara vertikal
+export default function Page5() {
+  const next = () => {
+    navigation.navigate("Materi/Pages3/Page6");
+  };
+  const previous = () => {
+    navigation.navigate("Materi/Pages3/Page4");
+  };
+  const navigation = useNavigation();
+  return (
+    <View style={styles.Container}>
+      <ImageBackground
+        source={image}
+        style={styles.backgroundImage}
+        resizeMode="cover"
+      >
+        <View style={styles.flex}>
+          <Pressable style={styles.buttonNext} onPress={next}>
+            <Text style={styles.text}>Next </Text>
+          </Pressable>
+          <Pressable style={styles.buttonPrevious} onPress={previous}>
+            <Text style={styles.text}>Back </Text>
+          </Pressable>
+        </View>
+      </ImageBackground>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    margin: 10,
+  },
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+  flex: {
+    flex: 1,
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+  },
+  buttonNext: {
+    margin: 10,
+    backgroundColor: "#2196F3",
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonPrevious: {
+    margin: 10,
+    backgroundColor: "#2196F3",
+    padding: 10,
+    borderRadius: 5,
+  },
+
+  text: {
+    color: "white",
+    fontSize: 16,
+  },
+});
