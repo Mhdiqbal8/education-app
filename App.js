@@ -13,11 +13,10 @@ import MindMapQuiz_2 from "./screen/MindMapQuiz_2";
 import MindMapQuiz_3 from "./screen/MindMapQuiz_3";
 import MindMapQuiz_4 from "./screen/MindMapQuiz_4";
 
-import { kuis_1 } from "./screen/mind_map_quiz/kuis_1"
-import { kuis_2 } from "./screen/mind_map_quiz/kuis_2"
-import { kuis_3 } from "./screen/mind_map_quiz/kuis_3"
-import { kuis_4 } from "./screen/mind_map_quiz/kuis_4"
-
+import { kuis_1 } from "./screen/mind_map_quiz/kuis_1";
+import { kuis_2 } from "./screen/mind_map_quiz/kuis_2";
+import { kuis_3 } from "./screen/mind_map_quiz/kuis_3";
+import { kuis_4 } from "./screen/mind_map_quiz/kuis_4";
 
 // Materinanoteknologi
 
@@ -133,8 +132,6 @@ export default function App() {
           name="CapaiDanTujuanPembelajaran"
           component={CapaiDanTujuanPembelajaran}
         />
-<<<<<<< HEAD
-
         {/* Quiz Mind Map Soal 1 */}
         <Stack.Screen name="kuis_1_soal_1" component={kuis_1.Soal_1} />
         <Stack.Screen name="kuis_1_soal_2" component={kuis_1.Soal_2} />
@@ -144,7 +141,6 @@ export default function App() {
         <Stack.Screen name="kuis_1_soal_4" component={kuis_1.Soal_4} />
         <Stack.Screen name="pembahasan_1_4" component={kuis_1.Pembahasan_1_4} />
         <Stack.Screen name="kuis_1_soal_5" component={kuis_1.Soal_5} />
-
         {/* Quiz Mind Map 2 */}
         <Stack.Screen name="kuis_2_soal_1" component={kuis_2.Soal_1} />
         <Stack.Screen name="kuis_2_soal_2" component={kuis_2.Soal_2} />
@@ -158,7 +154,6 @@ export default function App() {
         <Stack.Screen name="pembahasan_2_4" component={kuis_2.Pembahasan_2_4} />
         <Stack.Screen name="pembahasan_2_5" component={kuis_2.Pembahasan_2_5} />
         <Stack.Screen name="pembahasan_2_6" component={kuis_2.Pembahasan_2_6} />
-
         {/* Quix Mind Map 3 */}
         <Stack.Screen name="kuis_3_soal_1" component={kuis_3.Soal_1} />
         <Stack.Screen name="kuis_3_soal_2" component={kuis_3.Soal_2} />
@@ -168,7 +163,6 @@ export default function App() {
         <Stack.Screen name="pembahasan_3_2" component={kuis_3.Pembahasan_3_2} />
         <Stack.Screen name="pembahasan_3_3" component={kuis_3.Pembahasan_3_3} />
         <Stack.Screen name="pembahasan_3_4" component={kuis_3.Pembahasan_3_4} />
-
         {/* Quiz Mind Map 4 */}
         <Stack.Screen name="kuis_4_soal_1" component={kuis_4.Soal_1} />
         <Stack.Screen name="kuis_4_soal_2" component={kuis_4.Soal_2} />
@@ -180,57 +174,8 @@ export default function App() {
         <Stack.Screen name="pembahasan_4_3" component={kuis_4.Pembahasan_4_3} />
         <Stack.Screen name="pembahasan_4_4" component={kuis_4.Pembahasan_4_4} />
         <Stack.Screen name="pembahasan_4_5" component={kuis_4.Pembahasan_4_5} />
-
-=======
         {/* Quiz Mind Map 1 */}
-        <Stack.Screen name="Page1" component={Page1} />
-        <Stack.Screen name="Page2" component={Page2} />
-        <Stack.Screen name="Page3" component={Page3} />
-        <Stack.Screen name="Page4" component={Page4} />
-        <Stack.Screen name="Page5" component={Page5} />
-        <Stack.Screen name="Page6" component={Page6} />
-        <Stack.Screen name="Page7" component={Page7} />
-        <Stack.Screen name="Page8" component={Page8} />
-        <Stack.Screen name="Page9" component={Page9} />
-        <Stack.Screen name="Page10" component={Page10} />
-        {/* Quiz Mind Map 2 */}
-        <Stack.Screen name="Page2_1" component={Page2_1} />
-        <Stack.Screen name="Page2_2" component={Page2_2} />
-        <Stack.Screen name="Page2_3" component={Page2_3} />
-        <Stack.Screen name="Page2_4" component={Page2_4} />
-        <Stack.Screen name="Page2_5" component={Page2_5} />
-        <Stack.Screen name="Page2_6" component={Page2_6} />
-        <Stack.Screen name="Page2_7" component={Page2_7} />
-        <Stack.Screen name="Page2_8" component={Page2_8} />
-        <Stack.Screen name="Page2_9" component={Page2_9} />
-        <Stack.Screen name="Page2_10" component={Page2_10} />
-        <Stack.Screen name="Page2_11" component={Page2_11} />
-        <Stack.Screen name="Page2_12" component={Page2_12} />
-        <Stack.Screen name="Page2_13" component={Page2_13} />
-        {/* Quix Mind Map 3 */}
-        <Stack.Screen name="Page3_1" component={Page3_1} />
-        <Stack.Screen name="Page3_2" component={Page3_2} />
-        <Stack.Screen name="Page3_3" component={Page3_3} />
-        <Stack.Screen name="Page3_4" component={Page3_4} />
-        <Stack.Screen name="Page3_5" component={Page3_5} />
-        <Stack.Screen name="Page3_6" component={Page3_6} />
-        <Stack.Screen name="Page3_7" component={Page3_7} />
-        <Stack.Screen name="Page3_8" component={Page3_8} />
-        <Stack.Screen name="Page3_9" component={Page3_9} />
-        {/* Quiz Mind Map 4 */}
-        <Stack.Screen name="Page4_1" component={Page4_1} />
-        <Stack.Screen name="Page4_2" component={Page4_2} />
-        <Stack.Screen name="Page4_3" component={Page4_3} />
-        <Stack.Screen name="Page4_4" component={Page4_4} />
-        <Stack.Screen name="Page4_5" component={Page4_5} />
-        <Stack.Screen name="Page4_6" component={Page4_6} />
-        <Stack.Screen name="Page4_7" component={Page4_7} />
-        <Stack.Screen name="Page4_8" component={Page4_8} />
-        <Stack.Screen name="Page4_9" component={Page4_9} />
-        <Stack.Screen name="Page4_10" component={Page4_10} />
-        <Stack.Screen name="Page4_11" component={Page4_11} />
-        <Stack.Screen name="Page4_12" component={Page4_12} />
-        <Stack.Screen name="Page4_13" component={Page4_13} />
+
         {/* Materi nanoteknologi */}
         <Stack.Screen name="Materi/Pages1/Page1" component={Materi1} />
         {/* Select 2  */}
@@ -309,7 +254,6 @@ export default function App() {
           name="Materi/Pages8/Page1"
           component={PenerapanAplikasi}
         />
-
         {/* Bidang Kesehatan */}
         <Stack.Screen name="Materi/Pages8/Page2" component={BidangKesehatan1} />
         <Stack.Screen name="Materi/Pages8/Page3" component={BidangKesehatan2} />
@@ -345,7 +289,6 @@ export default function App() {
           component={BidangKulit7}
         />
         {/* Bidang Kesehatan Kulit */}
-
         {/* bidang Obat */}
         <Stack.Screen
           name="Materi/Pages8/PageSelect3_1"
@@ -373,7 +316,6 @@ export default function App() {
           name="Materi/Pages8/PageMaterial3"
           component={PageMaterial3}
         />
-
         {/* bidang pangan */}
         <Stack.Screen
           name="Materi/Pages8/BidangPangan"
@@ -399,7 +341,6 @@ export default function App() {
           name="Materi/Pages8/PanganSelect3"
           component={BidangPangan5}
         />
-
         {/* bidang tekstil */}
         <Stack.Screen
           name="Materi/Pages8/BidangTekstil"
@@ -429,7 +370,6 @@ export default function App() {
           name="Materi/Pages8/TekstilSelect3"
           component={PageTekstil3_1}
         />
-
         {/* // bidang keamanan */}
         <Stack.Screen
           name="Materi/Pages8/BidangKeamanan"
@@ -508,7 +448,6 @@ export default function App() {
           name="Materi/Pages8/PageAgrikultur3_2"
           component={PageAgrikultur3_2}
         />
->>>>>>> quiz
       </Stack.Navigator>
     </NavigationContainer>
   );
