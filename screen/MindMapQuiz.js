@@ -7,10 +7,7 @@ export default function MindMapQuiz() {
   return (
     <View style={styles.Container}>
       <Text style={styles.Text}>Mind Map Quiz 1</Text>
-      <Button
-        title="Mulai Kuis 1"
-        onPress={() => navigation.navigate("materi/select_one/Page1")}
-      >
+      <Button title="Mulai Kuis 1" onPress={() => navigation.navigate("Page1")}>
         /
       </Button>
     </View>

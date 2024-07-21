@@ -1,35 +1,72 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  ImageBackground,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import image from "../../../assets/nanoMaterial/nanomaterial2.jpg";
 
 export default function Page2() {
+  const home = () => {
+    navigation.navigate("MateriNanoTeknologi");
+  };
+  const previous = () => {
+    navigation.navigate("Materi/Pages4/Page1");
+  };
   const navigation = useNavigation();
   return (
     <View style={styles.Container}>
-      <Text style={styles.Text}>Gambar Metode Bottom Up & top Down</Text>
-      <Button
-        title="Icon Home"
-        onPress={() => navigation.navigate("MateriNanoTeknologi")}
+      <ImageBackground
+        source={image}
+        style={styles.backgroundImage}
+        resizeMode="cover"
       >
-        /
-      </Button>
-      <Button
-        title="Icon Back"
-        onPress={() => navigation.navigate("Materi/Pages4/Page1")}
-      >
-        /
-      </Button>
+        <View style={styles.flex}>
+          <Pressable style={styles.buttonNext} onPress={home}>
+            <Text style={styles.text}>Icon Home</Text>
+          </Pressable>
+          <Pressable style={styles.buttonPrevious} onPress={previous}>
+            <Text style={styles.text}>Back </Text>
+          </Pressable>
+        </View>
+      </ImageBackground>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   Container: {
-    marginTop: 25,
-    padding: 20,
+    flex: 1,
+    margin: 10,
   },
-  Text: {
-    fontSize: 40,
-    textAlign: "center",
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+  flex: {
+    flex: 1,
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+  },
+  buttonNext: {
+    backgroundColor: "#2196F3",
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonPrevious: {
+    backgroundColor: "#2196F3",
+    padding: 10,
+    borderRadius: 5,
+  },
+
+  text: {
+    color: "white",
+    fontSize: 16,
   },
 });

@@ -1,29 +1,54 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Pressable,
+  ImageBackground,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
+import image from "../../../assets/strukturAtom/atom1.jpg";
 export default function Quiz1() {
+  const link = () => {
+    navigation.navigate("MateriNanoTeknologi");
+  };
   const navigation = useNavigation();
   return (
     <View style={styles.Container}>
-      <Text style={styles.Text}>Gambar Mind Map Struktur Atom</Text>
-      <Button
-        title="seclect"
-        onPress={() => navigation.navigate("MateriNanoTeknologi")}
+      <ImageBackground
+        source={image}
+        style={styles.backgroundImage}
+        resizeMode="cover"
       >
-        /
-      </Button>
+        <Pressable style={styles.button} onPress={link}>
+          <Text style={styles.text}>icon home</Text>
+        </Pressable>
+      </ImageBackground>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   Container: {
-    marginTop: 25,
-    padding: 20,
+    flex: 1,
+    margin: 10,
+    position: "relative",
   },
-  Text: {
-    fontSize: 40,
-    textAlign: "center",
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+  button: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    backgroundColor: "#2196F3",
+    padding: 10,
+    borderRadius: 5,
+  },
+  text: {
+    color: "white",
+    fontSize: 16,
   },
 });
