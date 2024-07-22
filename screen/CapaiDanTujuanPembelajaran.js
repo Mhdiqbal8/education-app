@@ -1,21 +1,45 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import { Text, StyleSheet, SafeAreaView, ImageBackground, Pressable, View } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
+import image from '../assets/homeScreen/cp_tp.png'
+import { Ionicons } from '@expo/vector-icons';
+
 
 export default function CapaiDanTujuanPembelajaran() {
+    const navigation = useNavigation();
     return (
-        <View style={styles.Container}>
-            <Text style={styles.Text}>Capai Dan Tujuan Pembelajaran</Text>
-        </View>
+        <SafeAreaView style={styles.Container}>
+            <ImageBackground
+                source={image}
+                style={styles.backgroundImage}
+                resizeMode="cover"
+            >
+                <View style={styles.overlay}>
+                    <Pressable style={styles.button} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-outline" size={50} color="black" />
+                    </Pressable>
+                </View>
+            </ImageBackground>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     Container: {
-        marginTop: 25,
-        padding: 20,
+        flex: 1,
     },
-    Text: {
-        fontSize: 40,
-        textAlign: 'center'
+    backgroundImage: {
+        flex: 1,
+        width: "100%",
+        height: "100%",
     },
+    overlay: {
+        flex: 1,
+        justifyContent: 'start',
+        alignItems: 'center',
+        paddingLeft: 10,
+        flexDirection: 'row'
+    },
+    button: {
+        alignItems: 'center',
+    }
 });
