@@ -1,31 +1,31 @@
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import { View, Text, StyleSheet, Pressable, Modal, Alert } from "react-native";
-
-const data = [
-  { id: '1',  name: '6 Elektron dan 6 Neutron' },
-  { id: '2',  name: '6 Elektron dan 12 Neutron' },
-  { id: '3',  name: '6 Elektron dan 8 Neutron' },
-  { id: '4',  name: '12 Elektron dan 12 Neutron' },
-  { id: '5',  name: '12 Elektron dan 6 Neutron' },
-];
+import { View, StyleSheet, Alert, ImageBackground } from "react-native";
+import ButtonOption from "../../../components/ButtonOption";
 
 
 export default function Soal_3() {
   const navigation = useNavigation();
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-  const handleCardPress = (item) => {
-    setSelectedAnswer(item);
-    if (item.id === '1' && item.name === '6 Elektron dan 6 Neutron') {
+  const correctAnswer = '6 elektron, 6 neutron'
+  const correctPosition = 'button_1'
+  const corretUrl = 'kuis_2_soal_4'
+  const wrongUrl = 'pembahasan_2_3'
+  const imgSource = '../../../assets/quiz/kuis_2/soal_3.png'
+
+  const handleAnswerPress = (position) => {
+    setSelectedAnswer(position);
+
+    if (position === correctPosition) {
       Alert.alert(
         'Selamat',
-        'Jawaban Kamu benar yaitu 6 Elektron dan 6 Neutron.',
+        `Jawaban Kamu benar yaitu ${correctAnswer}.`,
         [
           {
             text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('kuis_2_soal_4');
+              navigation.navigate(corretUrl);
             },
           },
         ],
@@ -34,12 +34,12 @@ export default function Soal_3() {
     } else {
       Alert.alert(
         'Maaf, jawaban kamu salah.',
-        'Jawaban yang benar adalah 6 Elektron dan 6 Neutron.',
+        `Jawaban yang benar adalah ${correctAnswer}.`,
         [
           {
-            text: 'Pembahasan',
+            text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('pembahasan_2_3');
+              navigation.navigate(wrongUrl);
             },
           },
         ],
@@ -50,47 +50,89 @@ export default function Soal_3() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Tentukan elektron dan neuron pada atom carbon!?</Text>
-      <View style={styles.gridContainer}>
-        {data.map((item) => (
-          <Pressable
-            key={item.id}
-            style={styles.cardContainer}
-            onPress={() => handleCardPress(item)}
-          >
-            <Text style={styles.cardText}>{item.name}</Text>
-          </Pressable>
-        ))}
-      </View>
+      <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
+        <View style={styles.overlay_1}>
+          <View style={styles.button_1}>
+            <ButtonOption onPress={() => handleAnswerPress('button_1')} />
+          </View>
+          <View style={styles.button_2}>
+            <ButtonOption onPress={() => handleAnswerPress('button_2')} />
+          </View>
+        </View>
+        <View style={styles.overlay_2}>
+          <View style={styles.button_3}>
+            <ButtonOption onPress={() => handleAnswerPress('button_3')} />
+          </View>
+        </View>
+        <View style={styles.overlay_3}>
+          <View style={styles.button_4}>
+            <ButtonOption onPress={() => handleAnswerPress('button_4')} />
+          </View>
+          <View style={styles.button_5}>
+            <ButtonOption onPress={() => handleAnswerPress('button_5')} />
+          </View>
+        </View>
+      </ImageBackground>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 25,
-    paddingHorizontal: 20,
+    flex: 1,
+    backgroundColor: 'white'
   },
-  text: {
-    fontSize: 30,
-    textAlign: "center",
-    marginBottom: 10
+  imageContainer: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    paddingLeft: 30
   },
-  gridContainer: {
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+  overlay_1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    gap: 80
   },
-  cardContainer: {
-    backgroundColor: '#2196F3',
-    borderRadius: 20,
-    padding: 10,
-    width: '48%',
-    marginBottom: 10,
+  overlay_2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 80
   },
-  cardText: {
-    fontSize: 18,
-    textAlign: 'center',
-    color: 'white',
+  overlay_3: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 80
   },
+  button_1: {
+    marginTop: -10,
+    marginRight: 100,
+    marginLeft: 160
+  },
+  button_2: {
+    marginTop: 10,
+    marginRight: 250,
+    marginLeft: 120
+  },
+  button_3: {
+    marginTop: -270,
+    marginRight: 70
+  },
+  button_4: {
+    marginTop: -310,
+    marginRight: 210
+  },
+  button_5: {
+    marginTop: -310,
+    marginRight: 80
+  }
 });

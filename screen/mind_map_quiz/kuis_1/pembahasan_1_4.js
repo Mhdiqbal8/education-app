@@ -1,60 +1,42 @@
-import { useNavigation } from '@react-navigation/native';
-import { View, Text, StyleSheet, Pressable } from 'react-native'
-import ButtonNext from '../../../components/ButtonNext';
+import { StyleSheet, Pressable, Text, SafeAreaView, ImageBackground } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const data = [
-  {
-    id: '1',
-    desc: 'Metode button-up dalam nanoteknologi melibatkan pembangunan struktur nano dengan mengumpulkan atom dan molekul individu menggunakan reaksi kimia. Proses ini dimulai dari skala atom, membentuk klaster atom, dan akhirnya menjadi nanopartikel atau struktur nano lainnya.'
-  }
-]
-export default function Pembahasan_1_4() {
-  const navigation = useNavigation()
+export default function Pembahasan_1_2() {
+  const navigation = useNavigation();
+  const imgSource = '../../../assets/quiz/kuis_1/pembahasan_1_4.png'
+  const url = 'kuis_1_soal_5'
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Pembahasan:</Text>
-      <View style={styles.text_container}>
-        {data.map((item) => (
-          <Text style={styles.text_description} key={item.id}>{item.desc}</Text>
-        ))}
-      </View>
-      <ButtonNext url='kuis_1_soal_5' />
-    </View>
-  )
+    <SafeAreaView style={styles.container}>
+      <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
+        <Pressable style={styles.textContainer} onPress={()=> navigation.navigate(url)}>
+          <Text style={styles.text}>Lanjut</Text>
+        </Pressable>
+      </ImageBackground>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 25,
-    paddingHorizontal: 20,
+    backgroundColor: 'white'
   },
-  text: {
-    fontSize: 24,
-    textAlign: "left",
-    marginTop: 10,
-    paddingHorizontal: 20,
+  imageContainer: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    paddingLeft: 30
   },
-  text_container: {
-    paddingHorizontal: 20,
-  },
-  text_description: {
-    width: 700,
-    fontSize: 15,
-    textAlign: 'justify',
-    paddingVertical: 2,
-  },
-  button_next: {
+  textContainer: {
     position: 'absolute',
-    bottom: 20,
-    right: 20,
-    backgroundColor: '#007BFF',
+    bottom: 10,
+    right: 10,
+    backgroundColor: '#D9D9D9',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 15,
   },
-  button_text: {
-    color: '#FFFFFF',
+  text: {
     fontSize: 16,
-  }
+  },
 });

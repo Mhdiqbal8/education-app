@@ -50,11 +50,10 @@ const styles = StyleSheet.create({
       marginHorizontal: 10,
       paddingVertical: 10,
       paddingHorizontal: 20,
-      backgroundColor: '#2196F3',
+      backgroundColor: '#D9D9D9',
       borderRadius: 5,
     },
     buttonText: {
-      color: 'white',
       fontSize: 16,
     }
   });

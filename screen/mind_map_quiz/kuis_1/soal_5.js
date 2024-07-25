@@ -1,31 +1,30 @@
-import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import { View, Text, StyleSheet, Pressable, Modal, Alert } from "react-native";
-
-const data = [
-  { id: '1', desc: 'Proses mengumpulkan atom dan molekul menggunakan reaksi kimia, dari atom ke klaster atom menjadi nanopartikel.' },
-  { id: '2', desc: 'Pendekatan yang menggunakan tekanan tinggi dan suhu ekstrem untuk menciptakan struktur nano dari bahan baku yang lebih besar.' },
-  { id: '3', desc: 'Pendekatan yang memanfaatkan teknik mekanik untuk memahat material menjadi struktur nano.' },
-  { id: '4', desc: 'Proses memecah dari benda padatan ke pecahan besar dalam bentuk serbuk mikro menjadi nano partikel.' },
-  { id: '5', desc: 'Pendekatan yang memanfaatkan teknik mekanik untuk memahat material menjadi struktur nano.' },
-];
-
+import { useNavigation } from "@react-navigation/native";
+import { View, StyleSheet, Alert, ImageBackground } from "react-native";
+import ButtonOption from "../../../components/ButtonOption";
 
 export default function Soal_5() {
   const navigation = useNavigation();
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-  const handleCardPress = (item) => {
-    setSelectedAnswer(item);
-    if (item.id === '4' && item.desc === 'Proses memecah dari benda padatan ke pecahan besar dalam bentuk serbuk mikro menjadi nano partikel.') {
+  const correctAnswer = 'Proses memecah dari benda padatan ke pecahan besar dalam bentuk serbuk mikro menjadi nanopartikel.';
+  const correctPosition = 'button_2';
+  const corretUrl = 'MindMapQuiz_2'
+  const wrongUrl = 'MindMapQuiz_2'
+  const imgSource = '../../../assets/quiz/kuis_1/soal_5.png'
+
+  const handleAnswerPress = (position) => {
+    setSelectedAnswer(position);
+
+    if (position === correctPosition) {
       Alert.alert(
         'Selamat',
-        'Jawaban Kamu benar yaitu Proses memecah dari benda padatan ke pecahan besar dalam bentuk serbuk mikro menjadi nano partikel.',
+        `Jawaban Kamu benar yaitu ${correctAnswer}.`,
         [
           {
             text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('MindMapQuiz_2');
+              navigation.navigate(corretUrl);
             },
           },
         ],
@@ -34,12 +33,12 @@ export default function Soal_5() {
     } else {
       Alert.alert(
         'Maaf, jawaban kamu salah.',
-        'Jawaban yang benar adalah Proses memecah dari benda padatan ke pecahan besar dalam bentuk serbuk mikro menjadi nano partikel.',
+        `Jawaban yang benar adalah ${correctAnswer}.`,
         [
           {
             text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('MindMapQuiz_2');
+              navigation.navigate(wrongUrl);
             },
           },
         ],
@@ -50,18 +49,29 @@ export default function Soal_5() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Apa yang dimaksud top-down?</Text>
-      <View style={styles.gridContainer}>
-        {data.map((item) => (
-          <Pressable
-            key={item.id}
-            style={styles.cardContainer}
-            onPress={() => handleCardPress(item)}
-          >
-            <Text style={styles.cardText}>{item.desc}</Text>
-          </Pressable>
-        ))}
-      </View>
+      <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
+        <View style={styles.overlay_1}>
+          <View style={styles.button_1}>
+            <ButtonOption onPress={() => handleAnswerPress('button_1')} />
+          </View>
+          <View style={styles.button_2}>
+            <ButtonOption onPress={() => handleAnswerPress('button_2')} />
+          </View>
+        </View>
+        <View style={styles.overlay_2}>
+          <View style={styles.button_3}>
+            <ButtonOption onPress={() => handleAnswerPress('button_3')} />
+          </View>
+        </View>
+        <View style={styles.overlay_3}>
+          <View style={styles.button_4}>
+            <ButtonOption onPress={() => handleAnswerPress('button_4')} />
+          </View>
+          <View style={styles.button_5}>
+            <ButtonOption onPress={() => handleAnswerPress('button_5')} />
+          </View>
+        </View>
+      </ImageBackground>
     </View>
   );
 }
@@ -69,29 +79,58 @@ export default function Soal_5() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 35,
-    paddingHorizontal: 20,
+    backgroundColor: 'white'
   },
-  text: {
-    fontSize: 24,
-    textAlign: "center",
-    marginBottom: 20
+  imageContainer: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    paddingLeft: 30
   },
-  gridContainer: {
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+  overlay_1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    gap: 80
   },
-  cardContainer: {
-    backgroundColor: '#2196F3',
-    borderRadius: 20,
-    padding: 10,
-    width: '30%',
-    marginBottom: 10,
+  overlay_2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 80
   },
-  cardText: {
-    fontSize: 16,
-    textAlign: 'center',
-    color: 'white',
+  overlay_3: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 80
   },
+  button_1: {
+    marginTop: 10,
+    marginRight: 330,
+  },
+  button_2: {
+    marginTop: 10,
+    marginLeft: -100,
+    marginRight: 80
+  },
+  button_3: {
+    marginTop: -240,
+    marginRight: 50
+  },
+  button_4: {
+    marginTop: -300,
+    marginRight: 240
+  },
+  button_5: {
+    marginTop: -290,
+    marginRight: 50
+  }
 });
