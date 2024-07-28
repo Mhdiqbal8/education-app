@@ -1,58 +1,42 @@
-import { View, Text, StyleSheet } from 'react-native'
-import ButtonNext from '../../../components/ButtonNext';
+import { StyleSheet, Pressable, Text, SafeAreaView, ImageBackground } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const data = [
-  {
-    id: '1',
-    item: 'Atom Karbon memiliki nomor atom 6, yang berarti ia memiliki 6 proton.'
-  },
-  {
-    id: '2',
-    item: 'Karena atom dalam keadaan netral memiliki jumlah elektron yang sama dengan jumlah proton, Karbon juga memiliki 6 proton.'
-  },
-  {
-    id: '3',
-    item: 'Masa atom Karbon umumnya sekitar 12 (jumlah masa bulat terdekat). Jumlah neutron dihitung dengan mengurangi nomor atom dari masa atom:'
-  }
-]
 export default function Pembahasan_2_3() {
+  const navigation = useNavigation();
+  const imgSource = '../../../assets/quiz/kuis_2/pembahasan_2_3.png'
+  const url = 'kuis_2_soal_4'
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Pembahasan:</Text>
-      {data.map((item) => (
-        <View key={item.id}>
-          <Text style={styles.text_description}>{item.item}</Text>
-        </View>
-      ))
-      }
-      <View>
-        <Text style={{marginLeft: 30, fontSize: 24}}>Jumlah neturon = Masa atom - Nomor atom = 12 - 6 = 6</Text>
-        <Text style={{fontSize: 16, marginTop: 10}}>Hasilnya adalah, atom karbon memiliki 6 elektron dan 6 neuron.</Text>
-      </View>
-      <ButtonNext url='kuis_2_soal_4' />
-    </View>
-  )
+    <SafeAreaView style={styles.container}>
+      <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
+        <Pressable style={styles.textContainer} onPress={()=> navigation.navigate(url)}>
+          <Text style={styles.text}>Lanjut</Text>
+        </Pressable>
+      </ImageBackground>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 25,
+    backgroundColor: 'white'
+  },
+  imageContainer: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    paddingLeft: 30
+  },
+  textContainer: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    backgroundColor: '#D9D9D9',
+    paddingVertical: 10,
     paddingHorizontal: 20,
+    borderRadius: 15,
   },
   text: {
-    fontSize: 30,
-    textAlign: "left",
-    marginTop: 10,
-    paddingHorizontal: 20,
-  },
-  img: {
-    width: 200,
-    height: 250
-  },
-  text_description: {
-    width: "100%",
     fontSize: 16,
-    paddingVertical: 5,
   },
 });

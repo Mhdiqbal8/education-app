@@ -1,30 +1,30 @@
-import { View, Text, StyleSheet, Button, Pressable, Alert } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-
-const data = [
-  { id: '1', name: 'Albert Einstein' },
-  { id: '2', name: 'Stephen Hawking' },
-  { id: '3', name: 'Richard Feynman' },
-  { id: '4', name: 'Norio Taniguchi' },
-  { id: '5', name: 'Nikola Tesla' },
-];
+import { useNavigation } from "@react-navigation/native";
+import { View, StyleSheet, Alert, ImageBackground } from "react-native";
+import ButtonOption from "../../../components/ButtonOption";
 
 export default function Soal_2() {
   const navigation = useNavigation();
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-  const handleCardPress = (item) => {
-    setSelectedAnswer(item);
-    if (item.id === '4' && item.name === 'Norio Taniguchi') {
+  const correctAnswer = 'Norio Taniguchi';
+  const correctPosition = 'button_2';
+  const corretUrl = 'kuis_1_soal_3'
+  const wrongUrl = 'pembahasan_1_2'
+  const imgSource = '../../../assets/quiz/kuis_1/soal_2.png'
+
+  const handleAnswerPress = (position) => {
+    setSelectedAnswer(position);
+
+    if (position === correctPosition) {
       Alert.alert(
         'Selamat',
-        'Jawaban Kamu benar yaitu Norio Taniguchi.',
+        `Jawaban Kamu benar yaitu ${correctAnswer}.`,
         [
           {
             text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('kuis_1_soal_3');
+              navigation.navigate(corretUrl);
             },
           },
         ],
@@ -33,12 +33,12 @@ export default function Soal_2() {
     } else {
       Alert.alert(
         'Maaf, jawaban kamu salah.',
-        'Jawaban yang benar adalah Norio Taniguchi.',
+        `Jawaban yang benar adalah ${correctAnswer}.`,
         [
           {
-            text: 'Pembahasan',
+            text: 'Lanjut',
             onPress: () => {
-              navigation.navigate('pembahasan_1_2');
+              navigation.navigate(wrongUrl);
             },
           },
         ],
@@ -49,47 +49,89 @@ export default function Soal_2() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Siapakah yang pertama kali mengenalkan istilah "Nanoteknologi" ?</Text>
-      <View style={styles.gridContainer}>
-        {data.map((item) => (
-          <Pressable
-            key={item.id}
-            style={styles.cardContainer}
-            onPress={() => handleCardPress(item)}
-          >
-            <Text style={styles.cardText}>{item.name}</Text>
-          </Pressable>
-        ))}
-      </View>
+      <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
+        <View style={styles.overlay_1}>
+          <View style={styles.button_1}>
+            <ButtonOption onPress={() => handleAnswerPress('button_1')} />
+          </View>
+          <View style={styles.button_2}>
+            <ButtonOption onPress={() => handleAnswerPress('button_2')} />
+          </View>
+        </View>
+        <View style={styles.overlay_2}>
+          <View style={styles.button_3}>
+            <ButtonOption onPress={() => handleAnswerPress('button_3')} />
+          </View>
+        </View>
+        <View style={styles.overlay_3}>
+          <View style={styles.button_4}>
+            <ButtonOption onPress={() => handleAnswerPress('button_4')} />
+          </View>
+          <View style={styles.button_5}>
+            <ButtonOption onPress={() => handleAnswerPress('button_5')} />
+          </View>
+        </View>
+      </ImageBackground>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 25,
-    paddingHorizontal: 20,
+    flex: 1,
+    backgroundColor: 'white'
   },
-  text: {
-    fontSize: 30,
-    textAlign: "center",
-    marginBottom: 10
+  imageContainer: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    paddingLeft: 30
   },
-  gridContainer: {
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+  overlay_1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    gap: 80
   },
-  cardContainer: {
-    backgroundColor: '#2196F3',
-    borderRadius: 20,
-    padding: 10,
-    width: '48%',
-    marginBottom: 10,
+  overlay_2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 80
   },
-  cardText: {
-    fontSize: 18,
-    textAlign: 'center',
-    color: 'white',
+  overlay_3: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 80
   },
+  button_1: {
+    marginTop: -10,
+    marginRight: 60,
+    marginLeft: 160
+  },
+  button_2: {
+    marginTop: -10,
+    marginRight: 200,
+    marginLeft: 120
+  },
+  button_3: {
+    marginTop: -240,
+    marginRight: 50
+  },
+  button_4: {
+    marginTop: -290,
+    marginRight: 180
+  },
+  button_5: {
+    marginTop: -290,
+    marginRight: 30
+  }
 });
