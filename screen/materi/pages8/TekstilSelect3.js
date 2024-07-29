@@ -7,8 +7,8 @@ import {
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/penerapan/tekstilSelect3.jpg";
-
+import image from "../../../assets/penerapan/tekstilSelect3.png";
+import { Ionicons } from "@expo/vector-icons";
 export default function Page1() {
   const home = () => {
     navigation.navigate("Materi/Pages8/BidangTekstil");
@@ -22,8 +22,8 @@ export default function Page1() {
         style={styles.backgroundImage}
         resizeMode="cover"
       >
-        <Pressable style={styles.buttonNext} onPress={home}>
-          <Text style={styles.text}>Icon Home </Text>
+        <Pressable style={styles.button} onPress={home}>
+          <Ionicons name="home" size={24} color="black" />
         </Pressable>
       </ImageBackground>
     </View>
@@ -33,23 +33,20 @@ export default function Page1() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
   },
   backgroundImage: {
     flex: 1,
     width: "100%",
     height: "100%",
   },
-  buttonNext: {
-    margin: 10,
+  button: {
     position: "absolute",
-    bottom: "50%",
-    right: 0,
-    backgroundColor: "#2196F3",
+    top: 10,
+    right: 10,
+    backgroundColor: "#eee",
     padding: 10,
     borderRadius: 5,
   },
-
   text: {
     color: "white",
     fontSize: 16,

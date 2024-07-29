@@ -7,7 +7,8 @@ import {
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/penerapan/penerapanKesehatan1.jpg";
+import image from "../../../assets/penerapan/penerapanKesehatan1.png";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 // Page select 1: gambar cervical change
 
 export default function Page2() {
@@ -27,10 +28,10 @@ export default function Page2() {
       >
         <View style={styles.flex}>
           <Pressable style={styles.buttonNext} onPress={next}>
-            <Text style={styles.text}>Next </Text>
+            <FontAwesome6 name="arrow-right" size={30} color="black" />
           </Pressable>
           <Pressable style={styles.buttonPrevious} onPress={previous}>
-            <Text style={styles.text}>Back </Text>
+            <FontAwesome6 name="arrow-left" size={30} color="black" />
           </Pressable>
         </View>
       </ImageBackground>
@@ -41,7 +42,6 @@ export default function Page2() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
   },
   backgroundImage: {
     flex: 1,
@@ -56,12 +56,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   buttonNext: {
-    backgroundColor: "#2196F3",
     padding: 10,
     borderRadius: 5,
   },
   buttonPrevious: {
-    backgroundColor: "#2196F3",
     padding: 10,
     borderRadius: 5,
   },

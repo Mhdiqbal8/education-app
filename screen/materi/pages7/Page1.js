@@ -7,7 +7,7 @@ import {
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/nanoteknologi/nano1.jpg";
+import image from "../../../assets/nanoteknologi/nano1.png";
 
 export default function Page1() {
   const link = () => {
@@ -22,7 +22,7 @@ export default function Page1() {
         resizeMode="cover"
       >
         <Pressable style={styles.button} onPress={link}>
-          <Text style={styles.text}>Select</Text>
+          <Text style={styles.text}>Select </Text>
         </Pressable>
       </ImageBackground>
     </View>
@@ -32,7 +32,6 @@ export default function Page1() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
   },
   backgroundImage: {
@@ -42,14 +41,15 @@ const styles = StyleSheet.create({
   },
   button: {
     position: "absolute",
-    top: "50%",
-    right: "50%",
-    backgroundColor: "#2196F3",
-    padding: 10,
+    bottom: "2%",
+    right: "45%",
+    backgroundColor: "#ddd",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     borderRadius: 5,
   },
   text: {
-    color: "white",
-    fontSize: 16,
+    color: "#000",
+    fontSize: 12,
   },
 });

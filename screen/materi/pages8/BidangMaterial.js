@@ -8,20 +8,12 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import image from "../../../assets/penerapan/bidangMaterial.png";
+import ButtonSelect from "../../../components/ButtonSelect";
 // Gambar penerapan aplikasi di bidang material
 
 export default function BidangMaterial() {
   const next = () => {
     navigation.navigate("Materi/Pages8/BidangPangan");
-  };
-  const nextSelect1 = () => {
-    navigation.navigate("Materi/Pages8/PageMaterial1");
-  };
-  const nextSelect2 = () => {
-    navigation.navigate("Materi/Pages8/PageMaterial2");
-  };
-  const nextSelect3 = () => {
-    navigation.navigate("Materi/Pages8/PageMaterial3");
   };
   const navigation = useNavigation();
   return (
@@ -33,21 +25,26 @@ export default function BidangMaterial() {
       >
         {/* Button Next */}
         <Pressable style={styles.buttonNext} onPress={next}>
-          <Text style={styles.text}>bidang Pangan </Text>
+          <Text style={styles.text}>Nanotekologi bidang pangan 2</Text>
         </Pressable>
         {/* Button Next */}
 
         {/* Button select */}
-        <Pressable style={styles.buttonSelect1} onPress={nextSelect1}>
-          <Text style={styles.text}>Select 1 </Text>
-        </Pressable>
-        <Pressable style={styles.buttonSelect2} onPress={nextSelect2}>
-          <Text style={styles.text}>Select 2 </Text>
-        </Pressable>
-        <Pressable style={styles.buttonSelect3} onPress={nextSelect3}>
-          <Text style={styles.text}>Select 3 </Text>
-        </Pressable>
-        {/* Button select */}
+        <View style={styles.buttonSelect1}>
+          <View style={styles.text}>
+            <ButtonSelect url="Materi/Pages8/PageMaterial1" />
+          </View>
+        </View>
+        <View style={styles.buttonSelect2}>
+          <View style={styles.text}>
+            <ButtonSelect url="Materi/Pages8/PageMaterial2" />
+          </View>
+        </View>
+        <View style={styles.buttonSelect3}>
+          <View style={styles.text}>
+            <ButtonSelect url="Materi/Pages8/PageMaterial3" />
+          </View>
+        </View>
       </ImageBackground>
     </View>
   );
@@ -56,8 +53,8 @@ export default function BidangMaterial() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
+    backgroundColor: "#fff",
   },
   backgroundImage: {
     flex: 1,
@@ -69,15 +66,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     right: 0,
-    backgroundColor: "#2196F3",
+    backgroundColor: "#e27efb",
     padding: 10,
     borderRadius: 5,
   },
   buttonSelect1: {
     position: "absolute",
     top: "35%",
-    left: "10%",
-    backgroundColor: "#2196F3",
+    left: "7%",
     padding: 10,
     borderRadius: 5,
   },
@@ -85,20 +81,18 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: "20%",
     left: "43%",
-    backgroundColor: "#2196F3",
     padding: 10,
     borderRadius: 5,
   },
   buttonSelect3: {
     position: "absolute",
-    top: "30%",
-    right: "18%",
-    backgroundColor: "#2196F3",
+    top: "28%",
+    right: "15%",
     padding: 10,
     borderRadius: 5,
   },
   text: {
-    color: "white",
+    color: "#000",
     fontSize: 12,
   },
 });

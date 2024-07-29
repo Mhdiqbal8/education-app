@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/configElektron/elektron1.jpg";
+import image from "../../../assets/configElektron/elektron1.png";
 import {
   View,
   Text,
   StyleSheet,
   Pressable,
   ImageBackground,
+  SafeAreaView,
 } from "react-native";
 
 export default function Page1() {
@@ -15,25 +16,25 @@ export default function Page1() {
   };
   const navigation = useNavigation();
   return (
-    <View style={styles.Container}>
+    <SafeAreaView style={styles.Container}>
       <ImageBackground
         source={image}
         style={styles.backgroundImage}
         resizeMode="cover"
       >
         <Pressable style={styles.button} onPress={link}>
-          <Text style={styles.text}>Click Image</Text>
+          <Text style={styles.text}>Click Image </Text>
         </Pressable>
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
+    backgroundColor: "white",
   },
   backgroundImage: {
     flex: 1,
@@ -43,13 +44,13 @@ const styles = StyleSheet.create({
   button: {
     position: "absolute",
     top: "50%",
-    right: "50%",
-    backgroundColor: "#2196F3",
-    padding: 10,
+    right: "39%",
+    backgroundColor: "#eee",
+    padding: 5,
     borderRadius: 5,
   },
   text: {
-    color: "white",
-    fontSize: 16,
+    color: "#000",
+    fontSize: 12,
   },
 });

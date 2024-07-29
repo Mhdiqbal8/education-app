@@ -7,7 +7,8 @@ import {
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/penerapan/materialSelect1.jpg";
+import image from "../../../assets/penerapan/materialSelect1.png";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function PageMaterial1() {
   const home = () => {
@@ -22,7 +23,7 @@ export default function PageMaterial1() {
         resizeMode="cover"
       >
         <Pressable style={styles.button} onPress={home}>
-          <Text style={styles.text}>Home</Text>
+          <Ionicons name="home" size={24} color="black" />
         </Pressable>
       </ImageBackground>
     </View>
@@ -32,7 +33,6 @@ export default function PageMaterial1() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
   },
   backgroundImage: {
     flex: 1,
@@ -41,9 +41,9 @@ const styles = StyleSheet.create({
   },
   button: {
     position: "absolute",
-    top: "50%",
-    right: 0,
-    backgroundColor: "#2196F3",
+    top: 10,
+    right: 10,
+    backgroundColor: "#eee",
     padding: 10,
     borderRadius: 5,
   },

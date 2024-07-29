@@ -7,8 +7,9 @@ import {
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/penerapan/aplikasiKesehatan2_7.jpg";
-
+import image from "../../../assets/penerapan/aplikasiKesehatan2_7.png";
+import { Ionicons } from "@expo/vector-icons";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 export default function Page7() {
   const home = () => {
     navigation.navigate("Materi/Pages8/Page1");
@@ -25,11 +26,11 @@ export default function Page7() {
         resizeMode="cover"
       >
         <View style={styles.flex}>
-          <Pressable style={styles.buttonNext} onPress={home}>
-            <Text style={styles.text}>icon Home </Text>
+          <Pressable style={styles.iconHome} onPress={home}>
+            <Ionicons name="home" size={24} color="black" />
           </Pressable>
           <Pressable style={styles.buttonPrevious} onPress={previous}>
-            <Text style={styles.text}>Back </Text>
+            <FontAwesome6 name="arrow-left" size={30} color="black" />
           </Pressable>
         </View>
       </ImageBackground>
@@ -40,7 +41,6 @@ export default function Page7() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
   },
   backgroundImage: {
     flex: 1,
@@ -54,17 +54,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
   },
-  buttonNext: {
-    backgroundColor: "#2196F3",
+  iconHome: {
+    position: "absolute",
+    backgroundColor: "#eee",
+    top: 10,
+    right: 10,
     padding: 10,
     borderRadius: 5,
   },
   buttonPrevious: {
-    backgroundColor: "#2196F3",
+    position: "absolute",
+    left: 0,
     padding: 10,
     borderRadius: 5,
   },
-
   text: {
     color: "white",
     fontSize: 16,

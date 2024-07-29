@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/tabelPeriodik/periodik1.jpg";
+import image from "../../../assets/tabelPeriodik/periodik1.png";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import {
   View,
   Text,
@@ -21,9 +22,14 @@ export default function Page1() {
         style={styles.backgroundImage}
         resizeMode="cover"
       >
-        <Pressable style={styles.button} onPress={link}>
-          <Text style={styles.text}>Next </Text>
-        </Pressable>
+        {/* <Pressable style={styles.buttonNext} onPress={link}>
+          <FontAwesome6 name="arrow-right" size={30} color="black" />
+        </Pressable> */}
+        <View style={styles.flex}>
+          <Pressable style={styles.buttonNext} onPress={link}>
+            <FontAwesome6 name="arrow-right" size={30} color="black" />
+          </Pressable>
+        </View>
       </ImageBackground>
     </View>
   );
@@ -32,24 +38,24 @@ export default function Page1() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
+    backgroundColor: "white",
   },
   backgroundImage: {
     flex: 1,
     width: "100%",
     height: "100%",
   },
-  button: {
+  flex: {
     flex: 1,
-    position: "absolute",
-    // alignItems: "center",
-    bottom: "50%",
-    right: 0,
-    margin: 10,
-    backgroundColor: "#2196F3",
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    zIndex: 1,
+  },
+  buttonNext: {
     padding: 10,
-    borderRadius: 5,
   },
   text: {
     color: "white",

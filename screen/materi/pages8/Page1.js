@@ -7,7 +7,8 @@ import {
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/penerapan/penerapan_kesehatan.jpg";
+import image from "../../../assets/penerapan/penerapan_kesehatan.png";
+// import buttonImage from "../../../assets/button/button_material.png";
 // Gambar penerapan aplikasi di bidang kesehatan
 
 export default function Page1() {
@@ -33,19 +34,19 @@ export default function Page1() {
       >
         {/* Button Next */}
         <Pressable style={styles.buttonNext} onPress={next}>
-          <Text style={styles.text}>bidang Material </Text>
+          <Text style={styles.text}>Nanoteknologi bidang material 2</Text>
         </Pressable>
         {/* Button Next */}
 
         {/* Button select */}
         <Pressable style={styles.buttonSelect1} onPress={nextSelect1}>
-          <Text style={styles.text}>Select 1 </Text>
+          <Text style={styles.text}>Select </Text>
         </Pressable>
         <Pressable style={styles.buttonSelect2} onPress={nextSelect2}>
-          <Text style={styles.text}>Select 2 </Text>
+          <Text style={styles.text}>Select </Text>
         </Pressable>
         <Pressable style={styles.buttonSelect3} onPress={nextSelect3}>
-          <Text style={styles.text}>Select 3 </Text>
+          <Text style={styles.text}>Select </Text>
         </Pressable>
         {/* Button select */}
       </ImageBackground>
@@ -56,49 +57,54 @@ export default function Page1() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
   },
   backgroundImage: {
     flex: 1,
     width: "100%",
     height: "100%",
+    zIndex: -99,
   },
   buttonNext: {
     margin: 10,
     position: "absolute",
     bottom: 0,
     right: 0,
-    backgroundColor: "#2196F3",
-    padding: 10,
+    backgroundColor: "#e27efb",
+    // padding: 10 10,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
     borderRadius: 5,
   },
   buttonSelect1: {
     position: "absolute",
-    top: "35%",
+    top: "37%",
     left: "22%",
-    backgroundColor: "#2196F3",
-    padding: 10,
-    borderRadius: 5,
+    backgroundColor: "#eee",
+    paddingVertical: 3,
+    paddingHorizontal: 20,
+    borderRadius: 15,
   },
   buttonSelect2: {
     position: "absolute",
-    bottom: 0,
+    bottom: "2%",
     left: "40%",
-    backgroundColor: "#2196F3",
-    padding: 10,
-    borderRadius: 5,
+    backgroundColor: "#eee",
+    paddingVertical: 3,
+    paddingHorizontal: 20,
+    borderRadius: 15,
   },
   buttonSelect3: {
     position: "absolute",
     top: "33%",
     right: "23%",
-    backgroundColor: "#2196F3",
-    padding: 10,
-    borderRadius: 5,
+    backgroundColor: "#eee",
+    paddingVertical: 3,
+    paddingHorizontal: 20,
+    borderRadius: 15,
   },
   text: {
-    color: "white",
+    color: "#000",
     fontSize: 12,
   },
 });

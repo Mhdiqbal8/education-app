@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/fenomena/fenomena.jpg";
+import image from "../../../assets/fenomena/fenomena.png";
+import { Ionicons } from "@expo/vector-icons";
 // Gambar Fenomena & penerapan
 import {
   View,
@@ -23,7 +24,8 @@ export default function Page1() {
         resizeMode="cover"
       >
         <Pressable style={styles.button} onPress={link}>
-          <Text style={styles.text}>Icon Home </Text>
+          {/* <Text style={styles.text}>Icon Home </Text> */}
+          <Ionicons name="home" size={24} color="black" />
         </Pressable>
       </ImageBackground>
     </View>
@@ -33,8 +35,8 @@ export default function Page1() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
+    backgroundColor: "white",
   },
   backgroundImage: {
     flex: 1,
@@ -45,10 +47,10 @@ const styles = StyleSheet.create({
     flex: 1,
     position: "absolute",
     // alignItems: "center",
-    top: "10%",
+    top: 0,
     right: 0,
     margin: 10,
-    backgroundColor: "#2196F3",
+    backgroundColor: "#eee",
     padding: 10,
     borderRadius: 5,
   },

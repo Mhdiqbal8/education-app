@@ -5,9 +5,11 @@ import {
   StyleSheet,
   Pressable,
   ImageBackground,
+  SafeAreaView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/configElektron/elektron2.jpg";
+import image from "../../../assets/configElektron/elektron2.png";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 
 export default function Page2() {
   const next = () => {
@@ -18,7 +20,7 @@ export default function Page2() {
   };
   const navigation = useNavigation();
   return (
-    <View style={styles.Container}>
+    <SafeAreaView style={styles.Container}>
       <ImageBackground
         source={image}
         style={styles.backgroundImage}
@@ -26,21 +28,21 @@ export default function Page2() {
       >
         <View style={styles.flex}>
           <Pressable style={styles.buttonNext} onPress={next}>
-            <Text style={styles.text}>Icon Next</Text>
+            <FontAwesome6 name="arrow-right" size={30} color="black" />
           </Pressable>
           <Pressable style={styles.buttonPrevious} onPress={previous}>
-            <Text style={styles.text}>Icon Back</Text>
+            <FontAwesome6 name="arrow-left" size={30} color="black" />
           </Pressable>
         </View>
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
+    // margin: 10,
   },
   backgroundImage: {
     flex: 1,
@@ -55,12 +57,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   buttonNext: {
-    backgroundColor: "#2196F3",
     padding: 10,
     borderRadius: 5,
   },
   buttonPrevious: {
-    backgroundColor: "#2196F3",
     padding: 10,
     borderRadius: 5,
   },

@@ -7,7 +7,8 @@ import {
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/penerapan/panganSelect1.jpg";
+import image from "../../../assets/penerapan/panganSelect1.png";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 
 export default function Page1() {
   const next = () => {
@@ -22,9 +23,15 @@ export default function Page1() {
         resizeMode="cover"
       >
         {/* Button Next */}
-        <Pressable style={styles.buttonNext} onPress={next}>
+        {/* <Pressable style={styles.buttonNext} onPress={next}>
           <Text style={styles.text}>Next</Text>
-        </Pressable>
+        </Pressable> */}
+        <View style={styles.flex}>
+          <Pressable style={styles.buttonPrevious} onPress={next}>
+            <FontAwesome6 name="arrow-right" size={30} color="black" />
+          </Pressable>
+        </View>
+
         {/* Button Next */}
       </ImageBackground>
     </View>
@@ -34,7 +41,6 @@ export default function Page1() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
   },
   backgroundImage: {
@@ -42,15 +48,20 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  buttonNext: {
-    margin: 10,
+  flex: {
+    flex: 1,
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+  },
+  buttonPrevious: {
     position: "absolute",
-    bottom: "50%",
     right: 0,
-    backgroundColor: "#2196F3",
     padding: 10,
     borderRadius: 5,
   },
+
   text: {
     color: "white",
     fontSize: 12,

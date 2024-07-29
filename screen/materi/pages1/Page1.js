@@ -5,33 +5,36 @@ import {
   Text,
   Pressable,
   ImageBackground,
+  SafeAreaView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/strukturAtom/atom1.jpg";
+import image from "../../../assets/strukturAtom/atom1.png";
+import { Ionicons } from "@expo/vector-icons";
+
 export default function Quiz1() {
   const link = () => {
     navigation.navigate("MateriNanoTeknologi");
   };
   const navigation = useNavigation();
   return (
-    <View style={styles.Container}>
+    <SafeAreaView style={styles.Container}>
       <ImageBackground
         source={image}
         style={styles.backgroundImage}
         resizeMode="cover"
       >
         <Pressable style={styles.button} onPress={link}>
-          <Text style={styles.text}>icon home</Text>
+          <Ionicons name="home" size={24} color="black" />
         </Pressable>
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
+    // margin: 10,
     position: "relative",
   },
   backgroundImage: {
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 10,
     right: 10,
-    backgroundColor: "#2196F3",
+    backgroundColor: "#eee",
     padding: 10,
     borderRadius: 5,
   },

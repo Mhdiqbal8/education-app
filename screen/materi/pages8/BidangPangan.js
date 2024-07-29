@@ -7,21 +7,13 @@ import {
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/penerapan/bidangPangan.jpg";
+import image from "../../../assets/penerapan/bidangPangan.png";
+import ButtonSelect from "../../../components/ButtonSelect";
 // Gambar penerapan aplikasi di bidang material
 
 export default function BidangPangan() {
   const next = () => {
     navigation.navigate("Materi/Pages8/BidangTekstil");
-  };
-  const nextSelect1 = () => {
-    navigation.navigate("Materi/Pages8/PanganSelect1_1");
-  };
-  const nextSelect2 = () => {
-    navigation.navigate("Materi/Pages8/PanganSelect2_1");
-  };
-  const nextSelect3 = () => {
-    navigation.navigate("Materi/Pages8/PanganSelect3");
   };
   const navigation = useNavigation();
   return (
@@ -33,20 +25,26 @@ export default function BidangPangan() {
       >
         {/* Button Next */}
         <Pressable style={styles.buttonNext} onPress={next}>
-          <Text style={styles.text}>bidang Tekstil </Text>
+          <Text style={styles.text}>Nanoteknologi bidang Tekstil 2</Text>
         </Pressable>
         {/* Button Next */}
 
         {/* Button select */}
-        <Pressable style={styles.buttonSelect1} onPress={nextSelect1}>
-          <Text style={styles.text}>Select 1 </Text>
-        </Pressable>
-        <Pressable style={styles.buttonSelect2} onPress={nextSelect2}>
-          <Text style={styles.text}>Select 2 </Text>
-        </Pressable>
-        <Pressable style={styles.buttonSelect3} onPress={nextSelect3}>
-          <Text style={styles.text}>Select 3 </Text>
-        </Pressable>
+        <View style={styles.buttonSelect1}>
+          <View style={styles.text}>
+            <ButtonSelect url="Materi/Pages8/PanganSelect1_1" />
+          </View>
+        </View>
+        <View style={styles.buttonSelect2}>
+          <View style={styles.text}>
+            <ButtonSelect url="Materi/Pages8/PanganSelect2_1" />
+          </View>
+        </View>
+        <View style={styles.buttonSelect3}>
+          <View style={styles.text}>
+            <ButtonSelect url="Materi/Pages8/PanganSelect3" />
+          </View>
+        </View>
         {/* Button select */}
       </ImageBackground>
     </View>
@@ -56,8 +54,8 @@ export default function BidangPangan() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
+    backgroundColor: "white",
   },
   backgroundImage: {
     flex: 1,
@@ -69,36 +67,33 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     right: 0,
-    backgroundColor: "#2196F3",
+    backgroundColor: "#e27efb",
     padding: 10,
     borderRadius: 5,
   },
   buttonSelect1: {
     position: "absolute",
-    bottom: "20%",
+    bottom: "25%",
     left: "10%",
-    backgroundColor: "#2196F3",
     padding: 10,
     borderRadius: 5,
   },
   buttonSelect2: {
     position: "absolute",
-    bottom: "33%",
+    bottom: "35%",
     left: "43%",
-    backgroundColor: "#2196F3",
     padding: 10,
     borderRadius: 5,
   },
   buttonSelect3: {
     position: "absolute",
-    top: "50%",
-    right: "12%",
-    backgroundColor: "#2196F3",
+    top: "53%",
+    right: "10%",
     padding: 10,
     borderRadius: 5,
   },
   text: {
-    color: "white",
+    color: "#000",
     fontSize: 12,
   },
 });

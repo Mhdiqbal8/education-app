@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import image from "../../../assets/tabelPeriodik/periodik2.jpg";
+import image from "../../../assets/tabelPeriodik/periodik2.png";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import {
   View,
   Text,
@@ -32,19 +33,19 @@ export default function Page2() {
       >
         <View style={styles.flex}>
           <Pressable style={styles.buttonNext} onPress={next}>
-            <Text style={styles.text}>Next </Text>
+            <FontAwesome6 name="arrow-right" size={30} color="black" />
           </Pressable>
           <Pressable style={styles.buttonPrevious} onPress={previous}>
-            <Text style={styles.text}>Back </Text>
+            <FontAwesome6 name="arrow-left" size={30} color="black" />
           </Pressable>
         </View>
 
         <View style={styles.selectPeriode}>
           <Pressable style={styles.selectOne} onPress={nextPeriode1}>
-            <Text style={styles.textSelect}>Select 1 </Text>
+            <Text style={styles.textSelect}>Select </Text>
           </Pressable>
           <Pressable style={styles.SelectTwo} onPress={nextPeriode2}>
-            <Text style={styles.textSelect}>Select 2 </Text>
+            <Text style={styles.textSelect}>Select </Text>
           </Pressable>
         </View>
       </ImageBackground>
@@ -55,8 +56,8 @@ export default function Page2() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    margin: 10,
     position: "relative",
+    backgroundColor: "white",
   },
   backgroundImage: {
     flex: 1,
@@ -73,42 +74,39 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   buttonNext: {
-    backgroundColor: "#2196F3",
     padding: 10,
-    borderRadius: 5,
-    margin: 10,
   },
   buttonPrevious: {
-    backgroundColor: "#2196F3",
     padding: 10,
-    borderRadius: 5,
-    margin: 10,
   },
   selectPeriode: {
     position: "absolute",
     zIndex: 999,
     left: "15%",
     top: "28%",
-    gap: 80,
+    gap: 90,
   },
   selectOne: {
-    backgroundColor: "#2196F3",
-    padding: 5,
-    borderRadius: 5,
+    backgroundColor: "#eee",
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 50,
     margin: 10,
   },
   SelectTwo: {
-    backgroundColor: "#2196F3",
-    padding: 5,
-    borderRadius: 5,
+    backgroundColor: "#eee",
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 50,
     margin: 10,
+    left: "-10%",
   },
   text: {
     color: "white",
     fontSize: 16,
   },
   textSelect: {
-    color: "white",
+    color: "black",
     fontSize: 12,
   },
 });
