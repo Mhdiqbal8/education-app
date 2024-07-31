@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 export default function NavKuis2() {
   const Stack = createNativeStackNavigator();
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="kuis_2_soal_1" component={kuis_2.Soal_1} />
       <Stack.Screen name="kuis_2_soal_2" component={kuis_2.Soal_2} />
       <Stack.Screen name="kuis_2_soal_3" component={kuis_2.Soal_3} />

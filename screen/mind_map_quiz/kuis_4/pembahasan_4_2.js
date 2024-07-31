@@ -1,53 +1,42 @@
-import { View, Text, StyleSheet } from 'react-native'
-import ButtonNext from '../../../components/ButtonNext'
+import { StyleSheet, Pressable, Text, SafeAreaView, ImageBackground } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const data = [
-  {
-    id: '1',
-    desc: 'Nano titanium dioksida melindungi kulit dari sinar UV dengan memantulkan dan menyebarkan sinar tersebut. Partikel-partikel nano ini efektif memantulkan sinar UV, mengurangi jumlah radiasi yang menembus kulit, dan menyebarkan sinar UV ke berbagai arah, sehingga mengurangi intensitas radiasi yang mencapai kulit. Dengan cara ini, nano titanium dioksida memberikan perlindungan spektrum luas terhadap UVA dan UVB tanpa menimbulkan reaksi kimia yang berbahaya. Selain itu, ukuran nano partikel membuatnya dapat diaplikasikan secara merata dan transparan pada kulit, memberikan perlindungan yang efektif dan nyaman.'
-  }
-]
 export default function Pembahasan_4_2() {
+  const navigation = useNavigation();
+  const imgSource = '../../../assets/quiz/kuis_4/pembahasan_4_2.png'
+  const url = 'kuis_4_soal_3'
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Pembahasan:</Text>
-      {data.map((item) => (
-        <View key={item.id}>
-          <Text style={styles.text_description}>{item.desc}</Text>
-        </View>
-      ))
-      }
-      <ButtonNext url='kuis_4_soal_3' />
-    </View>
-  )
+    <SafeAreaView style={styles.container}>
+      <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
+        <Pressable style={styles.textContainer} onPress={()=> navigation.navigate(url)}>
+          <Text style={styles.text}>Lanjut</Text>
+        </Pressable>
+      </ImageBackground>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 25,
+    backgroundColor: 'white'
+  },
+  imageContainer: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    paddingLeft: 30
+  },
+  textContainer: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    backgroundColor: '#D9D9D9',
+    paddingVertical: 10,
     paddingHorizontal: 20,
+    borderRadius: 15,
   },
   text: {
-    fontSize: 30,
-    textAlign: "left",
-    marginTop: 10,
-    paddingHorizontal: 20,
-  },
-  img: {
-    width: 200,
-    height: 250
-  },
-  flex: {
-    flexDirection: 'row',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    gap: 20
-  },
-  text_description: {
-    width: "100%",
-    fontSize: 20,
-    textAlign: 'justify',
-    paddingVertical: 10,
+    fontSize: 16,
   },
 });
