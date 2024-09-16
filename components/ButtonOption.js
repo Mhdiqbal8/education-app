@@ -11,8 +11,8 @@ export default function ButtonOption({ onPress }) {
 const styles = StyleSheet.create({
     button_next: {
         backgroundColor: '#D9D9D9',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
+        paddingVertical: 6,
+        paddingHorizontal: 23,
         borderRadius: 15,
     },
     button_text: {

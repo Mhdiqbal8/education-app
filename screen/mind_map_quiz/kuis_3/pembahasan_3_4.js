@@ -1,16 +1,13 @@
-import { StyleSheet, Pressable, Text, SafeAreaView, ImageBackground } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, SafeAreaView, ImageBackground } from "react-native";
+import ButtonNext from "../../../components/ButtonNext";
 
 export default function Pembahasan_3_4() {
-  const navigation = useNavigation();
   const imgSource = '../../../assets/quiz/kuis_3/pembahasan_3_4.png'
   const url = 'MindMapQuiz_4'
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
-        <Pressable style={styles.textContainer} onPress={()=> navigation.navigate(url)}>
-          <Text style={styles.text}>Lanjut</Text>
-        </Pressable>
+        <ButtonNext url={url} />
       </ImageBackground>
     </SafeAreaView>
   )

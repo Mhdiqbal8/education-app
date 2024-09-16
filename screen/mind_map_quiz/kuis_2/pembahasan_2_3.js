@@ -1,5 +1,6 @@
 import { StyleSheet, Pressable, Text, SafeAreaView, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import ButtonNext from "../../../components/ButtonNext";
 
 export default function Pembahasan_2_3() {
   const navigation = useNavigation();
@@ -8,9 +9,7 @@ export default function Pembahasan_2_3() {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
-        <Pressable style={styles.textContainer} onPress={()=> navigation.navigate(url)}>
-          <Text style={styles.text}>Lanjut</Text>
-        </Pressable>
+        <ButtonNext url={url} />
       </ImageBackground>
     </SafeAreaView>
   );

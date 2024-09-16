@@ -25,7 +25,7 @@ export default function Bidangtekstil() {
       >
         {/* Button Next */}
         <Pressable style={styles.buttonNext} onPress={next}>
-          <Text style={styles.text}>Nanoteknologi bidang Agrikultur 2</Text>
+          <Text style={styles.text}>Nanoteknologi bidang Agrikultur</Text>
         </Pressable>
         {/* Button Next */}
 

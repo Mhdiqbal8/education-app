@@ -13,15 +13,15 @@ export default function ButtonNext({ url }) {
 const styles = StyleSheet.create({
     button_next: {
         position: 'absolute',
-        bottom: 20,
-        right: 20,
-        backgroundColor: '#007BFF',
-        paddingVertical: 10,
+        bottom: 10,
+        right: 35,
+        backgroundColor: '#D9D9D9',
+        paddingVertical: 6,
         paddingHorizontal: 20,
-        borderRadius: 5,
+        borderRadius: 15,
     },
     button_text: {
-        color: '#FFFFFF',
+        color: '#000000',
         fontSize: 16,
     }
 });

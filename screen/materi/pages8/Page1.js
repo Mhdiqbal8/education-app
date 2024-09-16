@@ -34,7 +34,7 @@ export default function Page1() {
       >
         {/* Button Next */}
         <Pressable style={styles.buttonNext} onPress={next}>
-          <Text style={styles.text}>Nanoteknologi bidang material 2</Text>
+          <Text style={styles.text}>Nanoteknologi bidang material</Text>
         </Pressable>
         {/* Button Next */}
 

@@ -23,13 +23,6 @@ export default function BidangAgrikultur() {
         style={styles.backgroundImage}
         resizeMode="cover"
       >
-        {/* Button Next */}
-        {/* <Pressable style={styles.buttonNext} onPress={next}>
-          <Text style={styles.text}>bidang Agrikultur </Text>
-        </Pressable> */}
-        {/* Button Next */}
-
-        {/* Button select */}
         <View style={styles.buttonSelect1}>
           <View style={styles.text}>
             <ButtonSelect url="Materi/Pages8/PageAgrikultur1_1" />

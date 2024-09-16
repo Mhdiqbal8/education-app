@@ -25,7 +25,7 @@ export default function BidangMaterial() {
       >
         {/* Button Next */}
         <Pressable style={styles.buttonNext} onPress={next}>
-          <Text style={styles.text}>Nanotekologi bidang pangan 2</Text>
+          <Text style={styles.text}>Nanotekologi bidang pangan</Text>
         </Pressable>
         {/* Button Next */}
 
