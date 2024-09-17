@@ -113,308 +113,311 @@ import PageAgrikultur3_1 from "./screen/materi/pages8/PageAgrikultur3_1";
 import PageAgrikultur3_2 from "./screen/materi/pages8/PageAgrikultur3_2";
 import { StatusBar } from "expo-status-bar";
 import DaftarPustaka from "./screen/DaftarPustaka";
+import { AudioProvider } from "./context/audio";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar hidden={true} />
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen
-          name="MateriNanoTeknologi"
-          component={MateriNanoTeknologi}
-        />
-        <Stack.Screen name="MindMapQuiz" component={MindMapQuiz} />
-        <Stack.Screen name="MindMapQuiz_2" component={MindMapQuiz_2} />
-        <Stack.Screen name="MindMapQuiz_3" component={MindMapQuiz_3} />
-        <Stack.Screen name="MindMapQuiz_4" component={MindMapQuiz_4} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Video" component={Video} />
-        <Stack.Screen name="DaftarPustaka" component={DaftarPustaka} />
-        <Stack.Screen
-          name="CapaiDanTujuanPembelajaran"
-          component={CapaiDanTujuanPembelajaran}
-        />
-        <Stack.Screen name="NavKuis1" component={NavKuis1} />
-        <Stack.Screen name="NavKuis2" component={NavKuis2} />
-        <Stack.Screen name="NavKuis3" component={NavKuis3} />
-        <Stack.Screen name="NavKuis4" component={NavKuis4} />
+    <AudioProvider>
+      <NavigationContainer>
+        <StatusBar hidden={true} />
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen
+            name="MateriNanoTeknologi"
+            component={MateriNanoTeknologi}
+          />
+          <Stack.Screen name="MindMapQuiz" component={MindMapQuiz} />
+          <Stack.Screen name="MindMapQuiz_2" component={MindMapQuiz_2} />
+          <Stack.Screen name="MindMapQuiz_3" component={MindMapQuiz_3} />
+          <Stack.Screen name="MindMapQuiz_4" component={MindMapQuiz_4} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Video" component={Video} />
+          <Stack.Screen name="DaftarPustaka" component={DaftarPustaka} />
+          <Stack.Screen
+            name="CapaiDanTujuanPembelajaran"
+            component={CapaiDanTujuanPembelajaran}
+          />
+          <Stack.Screen name="NavKuis1" component={NavKuis1} />
+          <Stack.Screen name="NavKuis2" component={NavKuis2} />
+          <Stack.Screen name="NavKuis3" component={NavKuis3} />
+          <Stack.Screen name="NavKuis4" component={NavKuis4} />
 
-        {/* Materi nanoteknologi */}
-        <Stack.Screen name="Materi/Pages1/Page1" component={Materi1} />
-        {/* Select 2  */}
-        <Stack.Screen
-          name="Materi/Pages2/Page1"
-          component={MateriKonfigurasiElektron}
-        />
-        <Stack.Screen
-          name="Materi/Pages2/Page2"
-          component={MateriKonfigurasiElektron1}
-        />
-        <Stack.Screen
-          name="Materi/Pages2/Page3"
-          component={MateriKonfigurasiElektron2}
-        />
-        {/* Select 3 */}
-        <Stack.Screen
-          name="Materi/Pages3/Page1"
-          component={MateriTabelPeriodik}
-        />
-        {/* click select 1  */}
-        <Stack.Screen
-          name="Materi/Pages3/Page2"
-          component={MateriTabelPeriodik2}
-        />
-        <Stack.Screen
-          name="Materi/Pages3/Page3"
-          component={MateriTabelPeriodik3}
-        />
-        {/* Bagian Select 1 */}
-        <Stack.Screen
-          name="Materi/Pages3/Page4"
-          component={MateriTabelPeriodik4}
-        />
-        <Stack.Screen
-          name="Materi/Pages3/Page5"
-          component={MateriTabelPeriodik5}
-        />
-        <Stack.Screen
-          name="Materi/Pages3/Page6"
-          component={MateriTabelPeriodik6}
-        />
-        {/* click select 2 */}
-        {/* Masih sama kayak select 1 */}
-        {/* <Stack.Screen
+          {/* Materi nanoteknologi */}
+          <Stack.Screen name="Materi/Pages1/Page1" component={Materi1} />
+          {/* Select 2  */}
+          <Stack.Screen
+            name="Materi/Pages2/Page1"
+            component={MateriKonfigurasiElektron}
+          />
+          <Stack.Screen
+            name="Materi/Pages2/Page2"
+            component={MateriKonfigurasiElektron1}
+          />
+          <Stack.Screen
+            name="Materi/Pages2/Page3"
+            component={MateriKonfigurasiElektron2}
+          />
+          {/* Select 3 */}
+          <Stack.Screen
+            name="Materi/Pages3/Page1"
+            component={MateriTabelPeriodik}
+          />
+          {/* click select 1  */}
+          <Stack.Screen
+            name="Materi/Pages3/Page2"
+            component={MateriTabelPeriodik2}
+          />
+          <Stack.Screen
+            name="Materi/Pages3/Page3"
+            component={MateriTabelPeriodik3}
+          />
+          {/* Bagian Select 1 */}
+          <Stack.Screen
+            name="Materi/Pages3/Page4"
+            component={MateriTabelPeriodik4}
+          />
+          <Stack.Screen
+            name="Materi/Pages3/Page5"
+            component={MateriTabelPeriodik5}
+          />
+          <Stack.Screen
+            name="Materi/Pages3/Page6"
+            component={MateriTabelPeriodik6}
+          />
+          {/* click select 2 */}
+          {/* Masih sama kayak select 1 */}
+          {/* <Stack.Screen
           name="Materi/Pages3/Page6"
           component={MateriTabelPeriodik6}
         /> */}
-        {/* Select 4 */}
-        <Stack.Screen
-          name="Materi/Pages4/Page1"
-          component={MateriNanoMaterial1}
-        />
-        <Stack.Screen
-          name="Materi/Pages4/Page2"
-          component={MateriNanoMaterial2}
-        />
-        {/* Select 5 */}
-        <Stack.Screen
-          name="Materi/Pages5/Page1"
-          component={MateriFenomenaAlam}
-        />
-        {/* Select 6 */}
-        <Stack.Screen name="Materi/Pages6/Page1" component={MateriPenerapan} />
-        {/* Matri nanoteknologi */}
-        <Stack.Screen
-          name="Materi/Pages7/Page1"
-          component={MateriNanoTeknologi1}
-        />
-        <Stack.Screen
-          name="Materi/Pages7/Page2"
-          component={MateriNanoTeknologi2}
-        />
-        {/* penerapan aplikasi */}
-        <Stack.Screen
-          name="Materi/Pages8/Page1"
-          component={PenerapanAplikasi}
-        />
-        {/* Bidang Kesehatan */}
-        <Stack.Screen name="Materi/Pages8/Page2" component={BidangKesehatan1} />
-        <Stack.Screen name="Materi/Pages8/Page3" component={BidangKesehatan2} />
-        <Stack.Screen name="Materi/Pages8/Page4" component={BidangKesehatan3} />
-        {/* Bidang Kesehatan */}
-        {/* Bidang Kesehatan Kulit */}
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect2_1"
-          component={BidangKulit1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect2_2"
-          component={BidangKulit2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect2_3"
-          component={BidangKulit3}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect2_4"
-          component={BidangKulit4}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect2_5"
-          component={BidangKulit5}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect2_6"
-          component={BidangKulit6}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect2_7"
-          component={BidangKulit7}
-        />
-        {/* Bidang Kesehatan Kulit */}
-        {/* bidang Obat */}
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect3_1"
-          component={BidangObat1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageSelect3_2"
-          component={BidangObat2}
-        />
-        {/* bidang Obat */}
-        {/* bidang Material*/}
-        <Stack.Screen
-          name="Materi/Pages8/BidangMaterial"
-          component={BidangMaterial}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageMaterial1"
-          component={PageMaterial1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageMaterial2"
-          component={PageMaterial2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageMaterial3"
-          component={PageMaterial3}
-        />
-        {/* bidang pangan */}
-        <Stack.Screen
-          name="Materi/Pages8/BidangPangan"
-          component={BidangPangan}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PanganSelect1_1"
-          component={BidangPangan1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PanganSelect1_2"
-          component={BidangPangan2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PanganSelect2_1"
-          component={BidangPangan3}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PanganSelect2_2"
-          component={BidangPangan4}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PanganSelect3"
-          component={BidangPangan5}
-        />
-        {/* bidang tekstil */}
-        <Stack.Screen
-          name="Materi/Pages8/BidangTekstil"
-          component={BidangTekstil}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/TekstilSelect1_1"
-          component={PageTekstil1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/TekstilSelect1_2"
-          component={PageTekstil2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/TekstilSelect1_3"
-          component={PageTekstil3}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/TekstilSelect2_1"
-          component={PageTekstil2_1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/TekstilSelect2_2"
-          component={PageTekstil2_2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/TekstilSelect3"
-          component={PageTekstil3_1}
-        />
-        {/* // bidang keamanan */}
-        <Stack.Screen
-          name="Materi/Pages8/BidangKeamanan"
-          component={BidangKeamanan}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan1_1"
-          component={PageKeamanan1_1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan1_2"
-          component={PageKeamanan1_2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan2_1"
-          component={PageKeamanan2_1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan2_2"
-          component={PageKeamanan2_2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan2_3"
-          component={PageKeamanan2_3}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan2_4"
-          component={PageKeamanan2_4}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan2_5"
-          component={PageKeamanan2_5}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan2_6"
-          component={PageKeamanan2_6}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan3_1"
-          component={PageKeamanan3_1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan3_2"
-          component={PageKeamanan3_2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageKeamanan3_3"
-          component={PageKeamanan3_3}
-        />
-        {/* Bidang agrikultur */}
-        <Stack.Screen
-          name="Materi/Pages8/BidangAgrikultur"
-          component={BidangAgrikultur}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageAgrikultur1_1"
-          component={PageAgrikultur1_1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageAgrikultur1_2"
-          component={PageAgrikultur1_2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageAgrikultur2_1"
-          component={PageAgrikultur2_1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageAgrikultur2_2"
-          component={PageAgrikultur2_2}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageAgrikultur3_1"
-          component={PageAgrikultur3_1}
-        />
-        <Stack.Screen
-          name="Materi/Pages8/PageAgrikultur3_2"
-          component={PageAgrikultur3_2}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+          {/* Select 4 */}
+          <Stack.Screen
+            name="Materi/Pages4/Page1"
+            component={MateriNanoMaterial1}
+          />
+          <Stack.Screen
+            name="Materi/Pages4/Page2"
+            component={MateriNanoMaterial2}
+          />
+          {/* Select 5 */}
+          <Stack.Screen
+            name="Materi/Pages5/Page1"
+            component={MateriFenomenaAlam}
+          />
+          {/* Select 6 */}
+          <Stack.Screen name="Materi/Pages6/Page1" component={MateriPenerapan} />
+          {/* Matri nanoteknologi */}
+          <Stack.Screen
+            name="Materi/Pages7/Page1"
+            component={MateriNanoTeknologi1}
+          />
+          <Stack.Screen
+            name="Materi/Pages7/Page2"
+            component={MateriNanoTeknologi2}
+          />
+          {/* penerapan aplikasi */}
+          <Stack.Screen
+            name="Materi/Pages8/Page1"
+            component={PenerapanAplikasi}
+          />
+          {/* Bidang Kesehatan */}
+          <Stack.Screen name="Materi/Pages8/Page2" component={BidangKesehatan1} />
+          <Stack.Screen name="Materi/Pages8/Page3" component={BidangKesehatan2} />
+          <Stack.Screen name="Materi/Pages8/Page4" component={BidangKesehatan3} />
+          {/* Bidang Kesehatan */}
+          {/* Bidang Kesehatan Kulit */}
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect2_1"
+            component={BidangKulit1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect2_2"
+            component={BidangKulit2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect2_3"
+            component={BidangKulit3}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect2_4"
+            component={BidangKulit4}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect2_5"
+            component={BidangKulit5}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect2_6"
+            component={BidangKulit6}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect2_7"
+            component={BidangKulit7}
+          />
+          {/* Bidang Kesehatan Kulit */}
+          {/* bidang Obat */}
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect3_1"
+            component={BidangObat1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageSelect3_2"
+            component={BidangObat2}
+          />
+          {/* bidang Obat */}
+          {/* bidang Material*/}
+          <Stack.Screen
+            name="Materi/Pages8/BidangMaterial"
+            component={BidangMaterial}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageMaterial1"
+            component={PageMaterial1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageMaterial2"
+            component={PageMaterial2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageMaterial3"
+            component={PageMaterial3}
+          />
+          {/* bidang pangan */}
+          <Stack.Screen
+            name="Materi/Pages8/BidangPangan"
+            component={BidangPangan}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PanganSelect1_1"
+            component={BidangPangan1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PanganSelect1_2"
+            component={BidangPangan2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PanganSelect2_1"
+            component={BidangPangan3}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PanganSelect2_2"
+            component={BidangPangan4}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PanganSelect3"
+            component={BidangPangan5}
+          />
+          {/* bidang tekstil */}
+          <Stack.Screen
+            name="Materi/Pages8/BidangTekstil"
+            component={BidangTekstil}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/TekstilSelect1_1"
+            component={PageTekstil1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/TekstilSelect1_2"
+            component={PageTekstil2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/TekstilSelect1_3"
+            component={PageTekstil3}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/TekstilSelect2_1"
+            component={PageTekstil2_1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/TekstilSelect2_2"
+            component={PageTekstil2_2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/TekstilSelect3"
+            component={PageTekstil3_1}
+          />
+          {/* // bidang keamanan */}
+          <Stack.Screen
+            name="Materi/Pages8/BidangKeamanan"
+            component={BidangKeamanan}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan1_1"
+            component={PageKeamanan1_1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan1_2"
+            component={PageKeamanan1_2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan2_1"
+            component={PageKeamanan2_1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan2_2"
+            component={PageKeamanan2_2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan2_3"
+            component={PageKeamanan2_3}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan2_4"
+            component={PageKeamanan2_4}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan2_5"
+            component={PageKeamanan2_5}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan2_6"
+            component={PageKeamanan2_6}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan3_1"
+            component={PageKeamanan3_1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan3_2"
+            component={PageKeamanan3_2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageKeamanan3_3"
+            component={PageKeamanan3_3}
+          />
+          {/* Bidang agrikultur */}
+          <Stack.Screen
+            name="Materi/Pages8/BidangAgrikultur"
+            component={BidangAgrikultur}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageAgrikultur1_1"
+            component={PageAgrikultur1_1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageAgrikultur1_2"
+            component={PageAgrikultur1_2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageAgrikultur2_1"
+            component={PageAgrikultur2_1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageAgrikultur2_2"
+            component={PageAgrikultur2_2}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageAgrikultur3_1"
+            component={PageAgrikultur3_1}
+          />
+          <Stack.Screen
+            name="Materi/Pages8/PageAgrikultur3_2"
+            component={PageAgrikultur3_2}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </AudioProvider>
   );
 }
