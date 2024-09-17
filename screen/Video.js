@@ -3,11 +3,20 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
+import { useAudio } from "../context/audio";
 
 export default function Video() {
   const navigation = useNavigation();
+  const { sound } = useAudio();
   const home = () => {
     navigation.navigate("HomeScreen");
+  };
+  const onStateChange = (state) => {
+    if (state === 'ended') {
+      if (sound) {
+        sound.playAsync();
+      }
+    }
   };
   return (
     <View style={styles.Container}>
@@ -26,7 +35,7 @@ export default function Video() {
           width={500}
           // play={playing}
           videoId={"NqC3JVDTsbc"}
-          // onChangeState={onStateChange}
+          onChangeState={onStateChange}
         />
       </View>
     </View>
