@@ -1,9 +1,20 @@
-import { StyleSheet, SafeAreaView, ImageBackground, View } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  ImageBackground,
+  View,
+  Pressable,
+  Text,
+} from "react-native";
 import image from "../assets/homeScreen/home.png";
-// import TrackPlayer from "react-native-track-player";
 import ButtonSelect from "../components/ButtonSelect";
+import { useAudioControl } from "../context/audioControl";
+import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function HomeScreen() {
+  const navigation = useNavigation();
+  const { isPlaying, toggleAudio } = useAudioControl(navigation);
   return (
     <SafeAreaView style={styles.Container}>
       <ImageBackground
@@ -15,7 +26,18 @@ export default function HomeScreen() {
           <View style={styles.button_6}>
             <ButtonSelect url="DaftarPustaka" />
           </View>
+          <View style={styles.playMusic}>
+            <Text style={styles.playMusicTitle}>Audio</Text>
+            <Pressable style={styles.iconPlay} onPress={toggleAudio}>
+              {isPlaying ? (
+                <Ionicons name="stop" size={24} color="black" />
+              ) : (
+                <Ionicons name="play" size={24} color="black" />
+              )}
+            </Pressable>
+          </View>
         </View>
+
         <View style={styles.overlay_2}>
           <View style={styles.button_1}>
             <ButtonSelect url="MateriNanoTeknologi" />
@@ -51,8 +73,19 @@ const styles = StyleSheet.create({
   },
   overlay_1: {
     flex: 1,
-    justifyContent: "flex-end",
-    flexDirection: "row",
+    justifyContent: "between",
+    flexDirection: "row-reverse",
+  },
+  playMusic: {
+    flex: 1,
+    marginLeft: 20,
+    marginTop: 5,
+  },
+  playMusicTitle: {
+    fontSize: 12,
+  },
+  iconPlay: {
+    marginLeft: 7,
   },
   overlay_2: {
     flex: 1,

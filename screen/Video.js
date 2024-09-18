@@ -1,25 +1,19 @@
-import React from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
-import { useAudio } from "../context/audio";
+import { useAudioControl } from "../context/audioControl";
 
 export default function Video() {
   const navigation = useNavigation();
-  const { sound } = useAudio();
+  const { onStateChange } = useAudioControl(navigation);
+
   const home = () => {
     navigation.navigate("HomeScreen");
   };
-  const onStateChange = (state) => {
-    if (state === 'ended') {
-      if (sound) {
-        sound.playAsync();
-      }
-    }
-  };
+
   return (
-    <View style={styles.Container}>
+    <View style={styles.container}>
       <View style={styles.flex}>
         <Pressable style={styles.iconHome} onPress={home}>
           <Ionicons name="home" size={24} color="black" />
@@ -42,14 +36,20 @@ export default function Video() {
   );
 }
 
+// Styles tetap sama seperti sebelumnya
+
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    // margin: "auto",
+    // background: "red",
   },
   youtube: {
     position: "absolute",
+    left: "18%",
+    top: 30,
   },
   youtubeTitle: {
     textAlign: "center",
