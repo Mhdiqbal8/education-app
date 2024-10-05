@@ -7,22 +7,23 @@ export default function Soal_3() {
   const navigation = useNavigation();
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-  const correctAnswer = 'Karena atom menentukan sifat fisik, kimia, dan mekanik material pada skala nano.';
-  const correctPosition = 'button_4';
-  const corretUrl = 'kuis_1_soal_4'
-  const wrongUrl = 'pembahasan_1_3'
-  const imgSource = '../../../assets/quiz/kuis_1/soal_3.png'
+  const correctAnswer =
+    "Karena atom menentukan sifat fisik, kimia, dan mekanik material pada skala nano.";
+  const correctPosition = "button_4";
+  const corretUrl = "kuis_1_soal_4";
+  const wrongUrl = "pembahasan_1_3";
+  const imgSource = "../../../assets/quiz/kuis_1/soal_3.png";
 
   const handleAnswerPress = (position) => {
     setSelectedAnswer(position);
 
     if (position === correctPosition) {
       Alert.alert(
-        'Selamat',
+        "Selamat",
         `Jawaban Kamu benar yaitu ${correctAnswer}.`,
         [
           {
-            text: 'Lanjut',
+            text: "Lanjut",
             onPress: () => {
               navigation.navigate(corretUrl);
             },
@@ -32,11 +33,11 @@ export default function Soal_3() {
       );
     } else {
       Alert.alert(
-        'Maaf, jawaban kamu salah.',
+        "Maaf, jawaban kamu salah.",
         `Jawaban yang benar adalah ${correctAnswer}.`,
         [
           {
-            text: 'Lanjut',
+            text: "Lanjut",
             onPress: () => {
               navigation.navigate(wrongUrl);
             },
@@ -49,26 +50,29 @@ export default function Soal_3() {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require(imgSource)} style={styles.imageContainer}>
+      <ImageBackground
+        source={require(imgSource)}
+        style={styles.imageContainer}
+      >
         <View style={styles.overlay_1}>
           <View style={styles.button_1}>
-            <ButtonOption onPress={() => handleAnswerPress('button_1')} />
+            <ButtonOption onPress={() => handleAnswerPress("button_1")} />
           </View>
           <View style={styles.button_2}>
-            <ButtonOption onPress={() => handleAnswerPress('button_2')} />
+            <ButtonOption onPress={() => handleAnswerPress("button_2")} />
           </View>
         </View>
         <View style={styles.overlay_2}>
           <View style={styles.button_3}>
-            <ButtonOption onPress={() => handleAnswerPress('button_3')} />
+            <ButtonOption onPress={() => handleAnswerPress("button_3")} />
           </View>
         </View>
         <View style={styles.overlay_3}>
           <View style={styles.button_4}>
-            <ButtonOption onPress={() => handleAnswerPress('button_4')} />
+            <ButtonOption onPress={() => handleAnswerPress("button_4")} />
           </View>
           <View style={styles.button_5}>
-            <ButtonOption onPress={() => handleAnswerPress('button_5')} />
+            <ButtonOption onPress={() => handleAnswerPress("button_5")} />
           </View>
         </View>
       </ImageBackground>
@@ -79,13 +83,13 @@ export default function Soal_3() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: "white",
   },
   imageContainer: {
     flex: 1,
     width: "100%",
     height: "100%",
-    paddingLeft: 30
+    paddingLeft: 30,
   },
   backgroundImage: {
     flex: 1,
@@ -94,23 +98,23 @@ const styles = StyleSheet.create({
   },
   overlay_1: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 80
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 80,
   },
   overlay_2: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 80
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 80,
   },
   overlay_3: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 80
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 80,
   },
   button_1: {
     marginTop: 10,
@@ -119,18 +123,18 @@ const styles = StyleSheet.create({
   button_2: {
     marginTop: -20,
     marginLeft: -140,
-    marginRight: 100
+    marginRight: 100,
   },
   button_3: {
     marginTop: -230,
-    marginRight: 80
+    marginRight: 80,
   },
   button_4: {
     marginTop: -270,
-    marginRight: 250
+    marginRight: 250,
   },
   button_5: {
     marginTop: -270,
-    marginRight: 90
-  }
+    marginRight: 90,
+  },
 });
